@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQSProps {
@@ -36,47 +36,40 @@ const FAQ_DATA: FAQSProps[] = [
 ]
 
 const FAQS = () => {
-  // State to track which question is open. Default is 0 (the first one).
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
-    // If clicking the one already open, close it (null). Otherwise, open the new one.
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="bg-white py-20 px-6 md:px-12 lg:px-20 w-full">
+    <section className="bg-white pb-20 px-6 md:px-12 lg:px-20 w-full">
       
-      {/* --- HEADER --- */}
-      <div className="text-center mb-16">
-        <p className="text-gray-500 font-medium text-sm tracking-wide uppercase mb-3">
+      <div className="text-center mb-8 font-barlow">
+        <p className="text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-wide uppercase mb-3 ">
             // FAQS
         </p>
-        <h3 className="text-3xl md:text-5xl font-bold leading-tight text-black">
+        <h3 className="text-3xl md:text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0E0E0E] ">
             Questions About Our <br className="hidden md:block" /> Farm & Products
         </h3>
       </div>
 
-      {/* --- ACCORDION LIST --- */}
-      <div className="max-w-4xl mx-auto flex flex-col gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6">
         {FAQ_DATA.map((item, index) => {
           const isOpen = openIndex === index;
 
           return (
             <div 
                 key={index} 
-                className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden cursor-pointer hover:shadow-md transition-shadow duration-300"
+                className="bg-white rounded-lg  border border-gray-100 overflow-hidden cursor-pointer shadow-[0px_12px_24px_-4px_#E5E5E5] hover:shadow-[0px_16px_32px_-4px_#E5E5E5] transition-shadow duration-300"
                 onClick={() => toggleFAQ(index)}
             >
-                {/* QUESTION ROW */}
                 <div className="flex justify-between items-center p-6 md:p-8">
-                    <h4 className="text-lg md:text-xl font-medium text-black">
+                    <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-medium text-[#0E0E0E] leading-[100%] tracking-[-1%] font-geist">
                         {item.question}
                     </h4>
 
-                    {/* TOGGLE ICON (Circle with +/-) */}
-                    <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-full border border-gray-300 flex items-center justify-center shrink-0">
-                        {/* Minus Icon (Shows when Open) */}
+                    <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-full border border-[#0E0E0E] flex items-center justify-center shrink-0">
                         <motion.span 
                             initial={false}
                             animate={{ rotate: isOpen ? 0 : -90, opacity: isOpen ? 1 : 0 }}
@@ -87,7 +80,6 @@ const FAQS = () => {
                             </svg>
                         </motion.span>
                         
-                        {/* Plus Icon (Shows when Closed) */}
                         <motion.span 
                             initial={false}
                             animate={{ rotate: isOpen ? 90 : 0, opacity: isOpen ? 0 : 1 }}
@@ -100,7 +92,6 @@ const FAQS = () => {
                     </div>
                 </div>
 
-                {/* ANSWER ROW (Animated Slide Down) */}
                 <AnimatePresence>
                     {isOpen && (
                         <motion.div
@@ -110,7 +101,7 @@ const FAQS = () => {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
                             <div className="px-6 md:px-8 pb-8 pt-0">
-                                <p className="text-gray-600 text-base leading-relaxed font-medium">
+                                <p className="text-[#0E0E0E] text-sm leading-[145%] font-medium font-geist">
                                     {item.answer}
                                 </p>
                             </div>

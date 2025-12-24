@@ -35,7 +35,7 @@ const Stats = () => {
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-start">
               <div className="flex items-center leading-none gap-3">
-                <span className="text-5xl md:text-6xl lg:text-[74px] font-medium tracking-[-4% leading-[120%] text-[#0C1515]">
+                <span className="text-5xl md:text-6xl lg:text-[74px] font-medium tracking-[-4% leading-[120%] text-[#0C1515] font-barlow">
                   <CountUp 
                     end={stat.target} 
                     duration={3} 
@@ -46,15 +46,15 @@ const Stats = () => {
                 </span>
 
 <div className="flex flex-col justify-between items-start">
-                <span className="text-2xl md:text-[32px] font-medium text-[#0E0E0E]">+</span>
+                <span className="text-2xl md:text-[32px] font-medium text-[#0E0E0E] font-barlow">+</span>
                 
-                <span className="text-2xl md:text-[32px] font-regular text-[#0C151599]">
+                <span className="text-2xl md:text-[32px] font-regular text-[#0C151599] font-barlow">
                   {stat.suffix}
                 </span>
 </div>
               </div>
 
-              <p className="mt-4 text-[#0C151599] text-sm md:text-base fonnt-regular leading-[136%] tracking-[-2%] ">
+              <p className="mt-4 text-[#0C151599] text-sm md:text-base fonnt-regular leading-[136%] tracking-[-2%] font-barlow ">
                 {stat.label}
               </p>
             </div>

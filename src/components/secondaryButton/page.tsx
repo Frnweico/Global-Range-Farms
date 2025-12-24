@@ -23,7 +23,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
     border-b border-[#0A0A0A33] 
     pb-1 w-fit
     font-medium text-sm sm:text-base
-    transition-all hover:border-black cursor-pointer
+    transition-all hover:border-black cursor-pointer font-geist font-medium text-base leading-[150%] tracking-[-1%] text-[#0E0E0E]
   `;
 
   const content = (

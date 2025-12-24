@@ -3,13 +3,13 @@ import React from "react";
 
 interface ButtonProps {
   text: string;
-  onClick?: () => void;
-  href?: string; // Added optional href
+  onClick?: (e?: React.MouseEvent) => void;
+  href?: string; 
   showIcon?: boolean;
   bgColor?: string;
   textColor?: string;
   className?: string;
-  type?: "button" | "submit" | "reset"; // Good practice to add type
+  type?: "button" | "submit" | "reset"; 
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,7 +22,6 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   type = "button",
 }) => {
-  // 1. Define the shared styles so both Link and Button look identical
   const baseClasses = `
     ${bgColor} 
     ${textColor} 
@@ -30,11 +29,10 @@ const Button: React.FC<ButtonProps> = ({
     group flex items-center justify-between 
     rounded-full 
     font-medium text-sm sm:text-base
-    transition-transform active:scale-95 cursor-pointer
+    transition-transform active:scale-95 cursor-pointer font-geist
     ${showIcon ? "pl-6 pr-2 py-2 gap-4" : "px-8 py-3"}
   `;
 
-  // 2. Define the content (Text + Icon)
   const content = (
     <>
       <span className="font-medium">{text}</span>
@@ -59,10 +57,9 @@ const Button: React.FC<ButtonProps> = ({
     </>
   );
 
-  // 3. Render Link if href exists, otherwise render Button
   if (href) {
     return (
-      <Link href={href} className={baseClasses}>
+      <Link href={href} onClick={onClick} className={baseClasses}>
         {content}
       </Link>
     );

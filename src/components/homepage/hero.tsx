@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Nav from "../nav/page"; 
 import Button from "../button/page"; 
 
 const Hero = () => {
@@ -22,12 +21,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 pb-12 sm:pb-20 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] items-end">
           
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[120%] tracking-[-4%] text-white drop-shadow-lg ">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[120%] tracking-[-4%] text-white drop-shadow-lg font-geist">
               Buy top-grade Goats, Rams, Cows and Poultry products
             </h1>
 
           <div className="flex flex-col gap-6 text-white md:items-end ml-auto">
-            <p className="text-lg md:text-2xl max-w-md opacity-90 leading-[140%] tracking-[-2%]">
+            <p className="text-lg md:text-2xl max-w-md opacity-90 leading-[140%] tracking-[-2%] font-barlow font-bold">
               Buy premium livestock for your home, family gatherings, events, restaurants, and every special celebration.
             </p>
 

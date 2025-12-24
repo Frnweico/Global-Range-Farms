@@ -25,32 +25,28 @@ const PremiumServices = () => {
   return (
     <section className="bg-[#0E0E0E] px-6 py-16 md:px-12 lg:px-20 w-full text-white relative">
       
-      {/* --- HEADER --- */}
       <div className="mb-12">
-        <p className="text-gray-500 font-medium text-sm tracking-wide uppercase mb-2">
-          // PREMIUM
+        <p className=" font-medium text-sm md:text-[18px] lg:text-[20px] tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow opacity-50">
+          // Premium
         </p>
-        <h3 className="text-3xl md:text-5xl font-bold">
+        <h3 className="text-3xl md:text-[36px] lg:text-[42px] font-geist leading-[124%] tracking-[-4%]">
           Our Premium Services
         </h3>
       </div>
 
-      {/* --- MIDDLE SECTION --- */}
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-14">
+      <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-14">
         
-        {/* 1. Left Column: Navigation Tabs */}
-        {/* 'flex-col' with NO gap ensures the borders touch to form a continuous line */}
-        <div className="flex flex-col lg:w-1/4">
+        <div className="flex flex-col lg:w-1/4 font-geist">
           {premiumData.map((item, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`
-                text-left text-lg md:text-xl font-medium transition-all duration-300 
-                pl-6 py-3 border-l-[3px] 
+                text-left text-xl md:text-[24px] lg:text-[32px] leading-[124%] tracking-[-4%] transition-all duration-300 
+                pl-6 py-3 border-l-2 cursor-pointer 
                 ${index === activeIndex 
-                  ? 'text-[#E2A918] border-[#E2A918]' // Active: Gold Line & Text
-                  : 'text-gray-500 border-gray-700 hover:text-gray-300' // Inactive: Grey Line (Visible)
+                  ? 'text-[#E2A918] border-[#E2A918]' 
+                  : 'text-[#CCCCCC] border-gray-700 hover:text-[#E2A918]'
                 }
               `}
             >
@@ -61,10 +57,8 @@ const PremiumServices = () => {
           ))}
         </div>
 
-        {/* 2. Middle Column: Description Text */}
         <div className="lg:w-1/2">
-          {/* We use a key here to trigger a tiny fade animation when content changes */}
-          <p key={activeIndex} className="text-gray-400 text-base md:text-lg leading-relaxed animate-in fade-in duration-300">
+          <p key={activeIndex} className="text-white opacity-60 text-lg md:text-[20px] lg:text-[25px] leading-[100%] tracking-[-3%] animate-in fade-in duration-300 font-geist">
             <span className="text-white font-bold mr-2">
               {activeService.descriptionPrefix}
             </span>

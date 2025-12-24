@@ -1,13 +1,10 @@
 "use client";
-
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../button/page'; // Ensure this path matches your structure
+import Button from '../button/page'; 
 
 const FooterMain = () => {
   
-  // Function to handle smooth scroll to top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,79 +13,68 @@ const FooterMain = () => {
   };
 
   return (
-    <footer className="bg-black text-white pt-20 pb-10 px-6 md:px-12 lg:px-20 w-full overflow-hidden">
+    <footer className="bg-[#0E0E0E] text-white pt-20 pb-10 px-3 md:px-5 lg:px-10 w-full overflow-hidden">
       
-      {/* --- TOP SECTION: GRID LAYOUT --- */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
         
-        {/* 1. LEFT COLUMN (CTA) - Spans 5 columns */}
         <div className="lg:col-span-5 flex flex-col items-start gap-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">
+          <h3 className="text-2xl md:text-[28px] lg:text-[32px] font-semibold text-white font-geist">
             Global Range Farms
           </h3>
-          <p className="text-gray-400 text-base leading-relaxed max-w-sm">
+          <p className="text-white opacity-90 text-base md:text-xl lg:text-[24px] leading-[142%] font-barlow">
             Ready to Experience Better Livestock and Reliable Supply with Global Range Farms?
           </p>
           
           <div className="mt-2">
             <Button 
               text="Contact Us Today" 
-              bgColor="bg-[#3ed634]" 
-              textColor="text-black"
+              bgColor="bg-[#4ACD20]" 
+              textColor="text-[#0E0E0E]"
               showIcon={true}
             />
           </div>
         </div>
 
-        {/* 2. RIGHT COLUMN (LINKS) - Spans 7 columns */}
-        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 ">
           
-          {/* Column 1: Farm */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-gray-500 font-medium text-sm uppercase tracking-wide">Farm</h4>
-            <div className="flex flex-col gap-4 text-gray-300 text-sm">
-              <Link href="/products" className="hover:text-[#3ed634] transition-colors">Our Livestock</Link>
-              <Link href="/services" className="hover:text-[#3ed634] transition-colors">Services</Link>
+            <h4 className="text-white opacity-80 font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Farm</h4>
+            <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
+              <Link href="/products" className="hover:text-[#4ACD20] transition-colors">Our Livestock</Link>
+              <Link href="/services" className="hover:text-[#4ACD20] transition-colors">Services</Link>
             </div>
           </div>
 
-          {/* Column 2: Resources */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-gray-500 font-medium text-sm uppercase tracking-wide">Resources</h4>
-            <div className="flex flex-col gap-4 text-gray-300 text-sm">
-              <Link href="/faqs" className="hover:text-[#3ed634] transition-colors">FAQs</Link>
-              <Link href="/testimonials" className="hover:text-[#3ed634] transition-colors">Testimonials</Link>
+            <h4 className="text-white opacity-80 font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Resources</h4>
+            <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
+              <Link href="/faqs" className="hover:text-[#4ACD20] transition-colors">FAQs</Link>
+              <Link href="/testimonials" className="hover:text-[#4ACD20] transition-colors">Testimonials</Link>
             </div>
           </div>
 
-          {/* Column 3: Company */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-gray-500 font-medium text-sm uppercase tracking-wide">Company</h4>
-            <div className="flex flex-col gap-4 text-gray-300 text-sm">
-              <Link href="/about-us" className="hover:text-[#3ed634] transition-colors">About Us</Link>
-              <Link href="/why-choose-us" className="hover:text-[#3ed634] transition-colors">Why Choose Us</Link>
+            <h4 className="text-white opacity-80 font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Company</h4>
+            <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
+              <Link href="/about-us" className="hover:text-[#4ACD20] transition-colors">About Us</Link>
+              <Link href="/why-choose-us" className="hover:text-[#4ACD20] transition-colors">Why Choose Us</Link>
             </div>
           </div>
 
         </div>
       </div>
 
-      {/* --- DIVIDER --- */}
-      <div className="w-full h-px bg-gray-800 mb-8" />
+      <div className="w-full h-px bg-white opacity-10 mb-4" />
 
-      {/* --- BOTTOM SECTION --- */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-gray-500 mb-12">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white opacity-50 mb-12 font-geist leading-[150%] tracking-[-2%]">
         <p>© 2025 Global Range Farms. All rights reserved.</p>
       </div>
 
-      {/* --- BIG LOGO & BACK TO TOP --- */}
-      <div className="relative w-full flex items-end justify-between">
+      <div className="relative w-full flex">
         
-        {/* 1. The Large Responsive Text Image */}
-        {/* We use w-full to make it span across, and h-auto to keep aspect ratio */}
-        <div className="w-[85%] md:w-[90%]">
+        <div className="w-[85%] md:w-[90%] ">
              <Image 
-                src="/images/svgs/GlobalRangeFarms.svg" // Ensure extension is correct (.svg vs .svgs)
+                src="/images/svgs/GlobalRangeFarms.svg" 
                 alt="Global Range Farms" 
                 width={1200} 
                 height={200}
@@ -96,17 +82,26 @@ const FooterMain = () => {
              />
         </div>
 
-        {/* 2. Custom Back To Top Button */}
-        {/* Positioned at the bottom right, aligned with the text baseline */}
-        <div className="flex flex-col items-center gap-2 cursor-pointer group mb-2 md:mb-6" onClick={scrollToTop}>
-            <span className="text-white text-xs font-medium group-hover:text-[#3ed634] transition-colors">
+        <div className="absolute bottom-4 right-0 lg:bottom-4 lg:right-24 flex items-center gap-3 cursor-pointer group bg-[#0E0E0E] px-6 py-2 text-black rounded-full" 
+            onClick={scrollToTop}>
+            <span className="text-white text-xs font-medium transition-colors font-geist">
                 Back to top
             </span>
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-transform group-hover:-translate-y-1">
-                {/* Up Arrow SVG */}
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="black" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                </svg>
+            <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center transition-transform group-hover:-translate-y-1">
+                <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#0e0e0e"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-5 h-5 -rotate-90"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg>
             </div>
         </div>
 
