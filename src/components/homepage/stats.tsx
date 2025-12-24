@@ -34,30 +34,27 @@ const Stats = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-start">
-              {/* Number Row */}
-              <div className="flex items-baseline text-black leading-none">
-                {/* The Counter */}
-                <span className="text-6xl md:text-7xl font-bold tracking-tighter">
+              <div className="flex items-center leading-none gap-3">
+                <span className="text-5xl md:text-6xl lg:text-[74px] font-medium tracking-[-4% leading-[120%] text-[#0C1515]">
                   <CountUp 
                     end={stat.target} 
-                    duration={2.5}    // Animation lasts 2.5 seconds
-                    enableScrollSpy={true} // Starts only when visible
-                    scrollSpyOnce={true}   // Only runs once
+                    duration={3} 
+                    enableScrollSpy={true} 
+                    scrollSpyOnce={true}  
                   />
                   {stat.unit}
                 </span>
 
-                {/* The Plus Sign (Superscript) */}
-                <sup className="text-3xl font-bold ml-1 -top-6 relative">+</sup>
+<div className="flex flex-col justify-between items-start">
+                <span className="text-2xl md:text-[32px] font-medium text-[#0E0E0E]">+</span>
                 
-                {/* The Small Label next to the number (Years, Sold, etc.) */}
-                <span className="text-xl md:text-2xl text-gray-500 ml-2 font-normal self-end mb-2">
+                <span className="text-2xl md:text-[32px] font-regular text-[#0C151599]">
                   {stat.suffix}
                 </span>
+</div>
               </div>
 
-              {/* Description Text */}
-              <p className="mt-4 text-gray-500 text-sm leading-relaxed max-w-[200px]">
+              <p className="mt-4 text-[#0C151599] text-sm md:text-base fonnt-regular leading-[136%] tracking-[-2%] ">
                 {stat.label}
               </p>
             </div>

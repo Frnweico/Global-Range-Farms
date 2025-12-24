@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Barlow } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/nav/page";
+import FooterSection from "@/components/footer/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const barlow = Barlow({
+  variable: "--font-barlow",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +33,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} antialiased`}
       >
+        <header className="absolute top-0 left-0 w-full z-50">
+          <Nav />
+        </header>
+        <main className="relative">
         {children}
+        </main>
+        <FooterSection />
       </body>
     </html>
   );
