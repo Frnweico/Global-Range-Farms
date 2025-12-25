@@ -26,7 +26,7 @@ const Hero = () => {
             </h1>
 
           <div className="flex flex-col gap-6 text-white md:items-end ml-auto">
-            <p className="text-lg md:text-2xl max-w-md opacity-90 leading-[140%] tracking-[-2%] font-barlow font-bold">
+            <p className="text-lg md:text-2xl max-w-md opacity-90 leading-[140%] tracking-[-2%] font-barlow font-bold mt-4 md:mt-0">
               Buy premium livestock for your home, family gatherings, events, restaurants, and every special celebration.
             </p>
 
