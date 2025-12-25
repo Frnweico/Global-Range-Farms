@@ -19,13 +19,13 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-black/30 via-black/30 to-black" />
 
       <div className="container mx-auto px-6 pb-12 sm:pb-20 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] items-end ">
           
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[120%] tracking-[-4%] text-white drop-shadow-lg font-geist">
               Buy top-grade Goats, Rams, Cows and Poultry products
             </h1>
 
-          <div className="flex flex-col gap-6 text-white md:items-end ml-auto">
+          <div className="flex flex-col gap-6 text-white lg:items-end  lg:ml-auto">
             <p className="text-lg md:text-2xl max-w-md opacity-90 leading-[140%] tracking-[-2%] font-barlow font-bold mt-4 md:mt-0">
               Buy premium livestock for your home, family gatherings, events, restaurants, and every special celebration.
             </p>

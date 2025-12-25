@@ -79,7 +79,7 @@ const ContactUs = () => {
                 <Link href="tel:+2348034066000" className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%]'>
                     +234 803 4066 000
                 </Link>
-                <Link href="https://wa.link/gobmim" className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%]'>
+                <Link href="https://wa.link/gobmim" target='_blank' className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%]'>
                     +234 803 093 3046
                 </Link>
             </div>

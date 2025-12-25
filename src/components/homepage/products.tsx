@@ -1,32 +1,38 @@
 import React from 'react';
 import SecondaryButton from '../secondaryButton/page';
+import Link from 'next/link';
 
 interface Product {
   name: string;
   imageUrl: string;
   description: string;
+  link: string;
 }
 
 const products: Product[] = [
   {
     name: 'Goats',
     imageUrl: '/images/pngs/goat.png',
-    description: "Strong, clean, and full of energy."
+    description: "Strong, clean, and full of energy.",
+    link: "/products#goats"
   },
   {
     name: 'Rams',
     imageUrl: '/images/pngs/ram.png',
-    description: "Healthy and perfect for festivals or gifting."
+    description: "Healthy and perfect for festivals or gifting.",
+    link: "/products#rams"
   },
   {
     name: 'Cows',
     imageUrl: '/images/pngs/cow.png',
-    description: "Big, well-fed, and great for large gatherings or meat supply."
+    description: "Big, well-fed, and great for large gatherings or meat supply.",
+    link: "/products#cows"
   },
   {
     name: 'Poultry',
     imageUrl: '/images/pngs/poultry.png',
-    description: "Large, nutritious eggs and healthy, well-fed chickens."
+    description: "Large, nutritious eggs and healthy, well-fed chickens.",
+    link: "/products#poultry"
   },
 ]
 
@@ -53,7 +59,7 @@ const OurProducts: React.FC = () => {
 
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full'>
         {products.map((product, index) => (
-          <div 
+          <Link href={product.link} 
             key={index} 
             style={{ backgroundImage: `url(${product.imageUrl})`, backgroundPosition: 'top', backgroundSize: 'cover' }} 
             className={`
@@ -71,7 +77,7 @@ const OurProducts: React.FC = () => {
                 {product.description}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -15,23 +15,23 @@ const FAQ_DATA: FAQSProps[] = [
     },
     {
         question: "How do I place an order?",
-        answer: "Simply navigate to our products page, select the livestock you want, and proceed to checkout. You can also contact us directly via WhatsApp for bulk orders."
+        answer: "You can order online, via WhatsApp, or by visiting our farm."
     },
     {
         question: "Can I reserve livestock for a later date?",
-        answer: "Yes, with our 'Buy & Keep' service, you can pay for livestock now, and we will raise and care for them until you are ready for pickup or delivery."
+        answer: "Yes. Our Buy and Keep service lets you secure your livestock until slaughter day. Terms and conditions apply."
     },
     {
-        question: "Do you offer home delivery?",
-        answer: "Yes, we offer delivery services across Lagos, Ogun, and Southwest Nigeria. Free delivery is available for bulk orders."
+        question: "Do you deliver livestock?",
+        answer: "Yes. We deliver free only on bulk orders within Lagos, Abeokuta, and Ibadan metropolises. Delivery to other areas can be arranged upon request."
     },
     {
         question: "Are your animals vet-checked?",
-        answer: "Absolutely. All our animals undergo regular veterinary checks to ensure they are healthy, disease-free, and safe for consumption."
+        answer: "Yes. All our livestock are raised under clean, healthy conditions and regularly inspected by certified veterinarians."
     },
     {
         question: "Do you sell in bulk or to businesses?",
-        answer: "Yes, we supply restaurants, event planners, and retailers. We offer special pricing models for consistent bulk purchases."
+        answer: "Yes. We supply livestock to caterers, restaurants, event planners, and corporate buyers. Contact us to discuss your needs."
     },
 ]
 
