@@ -203,7 +203,7 @@ const ServicesAbout = () => {
             {services.map((service, index) => {
                 const isOpen = activeIndex === index;
                 return (
-                    <div key={index} className="border-b border-white/10 pb-6 last:border-0">
+                    <div key={index} >
                         {/* Header Row */}
                         <div 
                             className="flex justify-between items-start gap-4 cursor-pointer"
@@ -218,7 +218,7 @@ const ServicesAbout = () => {
                                     xmlns="http://www.w3.org/2000/svg" 
                                     fill="none" viewBox="0 0 24 24" 
                                     strokeWidth={2} stroke="currentColor" 
-                                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                                    className={`w-5 h-5 transition-transform -rotate-180 duration-300 ${isOpen ? 'rotate-0' : ''}`}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>

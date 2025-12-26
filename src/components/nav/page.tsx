@@ -9,8 +9,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); // Track visibility for scroll
-  const [isDarkSection, setIsDarkSection] = useState(false); // Track background darkness
+  const [isVisible, setIsVisible] = useState(true); 
+  const [isDarkSection, setIsDarkSection] = useState(false); 
   
   const pathname = usePathname(); 
   const isHome = pathname === "/";
@@ -20,9 +20,6 @@ const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // A. Hide/Show Logic
-      // If scrolling DOWN and past 100px, hide. If scrolling UP, show.
       if (currentScrollY > 100 && currentScrollY > lastScrollY.current) {
         setIsVisible(false);
       } else {
@@ -30,16 +27,11 @@ const Nav = () => {
       }
       lastScrollY.current = currentScrollY;
 
-      // B. Dynamic Text Color Logic
-      // We check the element at the center-top of the screen (behind the nav)
-      // If it contains your specific dark classes, we switch text to white.
       const elementUnderNav = document.elementFromPoint(window.innerWidth / 2, 40);
       if (elementUnderNav) {
-        // Traverse up to find the closest section container with a background class
         const section = elementUnderNav.closest('section') || elementUnderNav.closest('div');
         if (section) {
           const className = section.className;
-          // Check for your specific dark background colors
           const isDark = className.includes("bg-[#0E0E0E]") || className.includes("bg-[#133405]");
           setIsDarkSection(isDark);
         }
@@ -49,20 +41,9 @@ const Nav = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // --- DYNAMIC STYLING ---
-  // If Mobile Menu is Open -> White BG, Black Text
-  // Else if Over Dark Section -> Transparent BG, White Text
-  // Else (Over White Section) -> Transparent BG, Black Text
-  // (Exception: On Home Page top, we force White Text unless menu is open)
   
   const isTop = typeof window !== 'undefined' ? window.scrollY < 50 : true;
-  
-  // Determine Text Color Priority:
-  // 1. Menu Open = Black
-  // 2. Home Page at Top = White
-  // 3. Over Dark Section = White
-  // 4. Default = Black
+
   let dynamicTextColor = "text-black";
   if (isOpen) {
     dynamicTextColor = "text-black";
@@ -72,7 +53,7 @@ const Nav = () => {
     dynamicTextColor = "text-white";
   }
 
-  const navBgColor = isOpen ? "bg-white" : "bg-transparent backdrop-blur-sm"; // Added blur for better read
+  const navBgColor = isOpen ? "bg-white" : "bg-transparent backdrop-blur-sm"; 
   const logoSrc = "/images/svgs/grfLogo.svg"; 
 
   const handleContactClick = (e?: React.MouseEvent) => {

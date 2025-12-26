@@ -1,4 +1,4 @@
-import OurServices from "@/components/homepage/services";
+import ServicesAbout from "@/components/about/services";
 import ProductsHero from "@/components/products/hero";
 import ImageGallery from "@/components/products/imageGallery";
 import Order from "@/components/products/order";
@@ -9,7 +9,7 @@ const Products = () => {
     <div>
       <ProductsHero />
       <ProductCarousel />
-      <OurServices />
+      <ServicesAbout />
       <ImageGallery />
       <Order />
     </div>
