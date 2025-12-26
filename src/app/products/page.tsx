@@ -3,12 +3,14 @@ import ProductsHero from "@/components/products/hero";
 import ImageGallery from "@/components/products/imageGallery";
 import Order from "@/components/products/order";
 import ProductCarousel from "@/components/products/productCarousel";
+import OurSolutions from "@/components/products/solutions";
 
 const Products = () => {
   return (
     <div>
       <ProductsHero />
       <ProductCarousel />
+      <OurSolutions />
       <ServicesAbout />
       <ImageGallery />
       <Order />

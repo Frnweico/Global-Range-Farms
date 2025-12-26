@@ -9,7 +9,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); 
+  const [isVisible, setIsVisible] = useState(true);
+  const [isTop, setIsTop] = useState(true); 
   const [isDarkSection, setIsDarkSection] = useState(false); 
   
   const pathname = usePathname(); 
@@ -20,6 +21,13 @@ const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 50) {
+        setIsTop(true);
+      } else {
+        setIsTop(false);
+      }
+
       if (currentScrollY > 100 && currentScrollY > lastScrollY.current) {
         setIsVisible(false);
       } else {
@@ -41,16 +49,17 @@ const Nav = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-  const isTop = typeof window !== 'undefined' ? window.scrollY < 50 : true;
 
   let dynamicTextColor = "text-black";
+
   if (isOpen) {
     dynamicTextColor = "text-black";
   } else if (isHome && isTop) {
     dynamicTextColor = "text-white";
   } else if (isDarkSection) {
     dynamicTextColor = "text-white";
+  } else {
+    dynamicTextColor = "text-black";
   }
 
   const navBgColor = isOpen ? "bg-white" : "bg-transparent backdrop-blur-sm"; 
