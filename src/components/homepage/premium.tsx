@@ -72,6 +72,7 @@ const PremiumServices = () => {
             text="Contact Us" 
             bgColor="bg-[#E2A918]" 
             textColor="text-black"
+            href="https://wa.link/gobmim"
             showIcon={true}
           />
         </div>

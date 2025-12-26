@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../button/page";
@@ -9,20 +9,74 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); 
+  const [isVisible, setIsVisible] = useState(true); // Track visibility for scroll
+  const [isDarkSection, setIsDarkSection] = useState(false); // Track background darkness
   
+  const pathname = usePathname(); 
   const isHome = pathname === "/";
+  const lastScrollY = useRef(0);
 
-  // DYNAMIC STYLING:
-  // 1. If Mobile Menu is OPEN: Force White Background & Black Text
-  // 2. If Closed & Home: Transparent Background & White Text
-  // 3. If Closed & Other Page: Transparent Background & Black Text
-  const navBgColor = isOpen ? "bg-white" : "bg-transparent";
-  const textColor = isOpen ? "text-black" : (isHome ? "text-white" : "text-black");
-  const logoSrc = isOpen ? "/images/svgs/grfLogo.svg" : "/images/svgs/grfLogo.svg"; // Assuming logo works on both, or swap if needed
+  // --- 1. HANDLE SCROLL VISIBILITY & COLOR DETECTION ---
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // A. Hide/Show Logic
+      // If scrolling DOWN and past 100px, hide. If scrolling UP, show.
+      if (currentScrollY > 100 && currentScrollY > lastScrollY.current) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentScrollY;
+
+      // B. Dynamic Text Color Logic
+      // We check the element at the center-top of the screen (behind the nav)
+      // If it contains your specific dark classes, we switch text to white.
+      const elementUnderNav = document.elementFromPoint(window.innerWidth / 2, 40);
+      if (elementUnderNav) {
+        // Traverse up to find the closest section container with a background class
+        const section = elementUnderNav.closest('section') || elementUnderNav.closest('div');
+        if (section) {
+          const className = section.className;
+          // Check for your specific dark background colors
+          const isDark = className.includes("bg-[#0E0E0E]") || className.includes("bg-[#133405]");
+          setIsDarkSection(isDark);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // --- DYNAMIC STYLING ---
+  // If Mobile Menu is Open -> White BG, Black Text
+  // Else if Over Dark Section -> Transparent BG, White Text
+  // Else (Over White Section) -> Transparent BG, Black Text
+  // (Exception: On Home Page top, we force White Text unless menu is open)
+  
+  const isTop = typeof window !== 'undefined' ? window.scrollY < 50 : true;
+  
+  // Determine Text Color Priority:
+  // 1. Menu Open = Black
+  // 2. Home Page at Top = White
+  // 3. Over Dark Section = White
+  // 4. Default = Black
+  let dynamicTextColor = "text-black";
+  if (isOpen) {
+    dynamicTextColor = "text-black";
+  } else if (isHome && isTop) {
+    dynamicTextColor = "text-white";
+  } else if (isDarkSection) {
+    dynamicTextColor = "text-white";
+  }
+
+  const navBgColor = isOpen ? "bg-white" : "bg-transparent backdrop-blur-sm"; // Added blur for better read
+  const logoSrc = "/images/svgs/grfLogo.svg"; 
 
   const handleContactClick = (e?: React.MouseEvent) => {
-    setIsOpen(false); // Close menu if clicked
+    setIsOpen(false); 
     if (isHome) {
       e?.preventDefault(); 
       const element = document.getElementById("contact-us");
@@ -37,10 +91,16 @@ const Nav = () => {
   };
 
   return (
-    <div className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${navBgColor}`}>
+    <div 
+      className={`
+        fixed top-0 left-0 w-full z-50 transition-all duration-300 
+        ${navBgColor} 
+        ${isVisible || isOpen ? "translate-y-0" : "-translate-y-full"} 
+      `}
+    >
       
       {/* --- MAIN HEADER BAR --- */}
-      <div className={`flex items-center justify-between p-4 md:px-6 lg:px-12 ${textColor}`}>
+      <div className={`flex items-center justify-between p-4 md:px-6 lg:px-12 transition-colors duration-300 ${dynamicTextColor}`}>
         
         {/* LOGO */}
         <div className="relative z-50">
@@ -55,18 +115,20 @@ const Nav = () => {
            </Link>
         </div>
         
+        {/* DESKTOP LINKS */}
         <div className="hidden lg:flex gap-8 uppercase underline font-semibold text-[14px] leading-[150%] tracking-[-1%] font-geist drop-shadow-md"> 
-          <Link href={"/"} className="hover:opacity-80">Home</Link>
-          <Link href={"/products"} className="hover:opacity-80">Our Product</Link>
-          <Link href={"/#services"} className="hover:opacity-80">Our Services</Link>
-          <Link href={"/about-us"} className="hover:opacity-80">About Us</Link>
+          <Link href={"/"} className="hover:opacity-80 transition-opacity">Home</Link>
+          <Link href={"/products"} className="hover:opacity-80 transition-opacity">Our Product</Link>
+          <Link href={"/#services"} className="hover:opacity-80 transition-opacity">Our Services</Link>
+          <Link href={"/about-us"} className="hover:opacity-80 transition-opacity">About Us</Link>
         </div>
 
-        {/* --- DESKTOP BUTTON (Hidden on Mobile) --- */}
+        {/* DESKTOP BUTTON */}
         <div className="hidden lg:block">
             <Button 
                 text="Contact Us" 
                 bgColor="bg-[#4ACD20]" 
+                textColor="text-[#0E0E0E]" // Force black text on button for readability
                 className="" 
                 onClick={handleContactClick}
                 showIcon={false}
@@ -74,17 +136,13 @@ const Nav = () => {
             />
         </div>
 
-        {/* --- MOBILE HAMBURGER (Visible on Mobile) --- */}
+        {/* MOBILE HAMBURGER */}
         <button 
             onClick={toggleMenu} 
             className="lg:hidden z-50 flex flex-col justify-center gap-[6px] w-8 h-8 focus:outline-none cursor-pointer"
         >
-            {/* The 3 lines of the hamburger */}
-            {/* Line 1 */}
             <span className={`block w-full h-[2px] bg-current transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-[8px]" : ""}`} />
-            {/* Line 2 */}
             <span className={`block w-full h-[2px] bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
-            {/* Line 3 */}
             <span className={`block w-full h-[2px] bg-current transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-[8px]" : ""}`} />
         </button>
 

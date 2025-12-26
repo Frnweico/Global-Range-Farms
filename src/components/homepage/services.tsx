@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from "next/image";
 import SecondaryButton from "../secondaryButton/page"; 
 import { motion, AnimatePresence } from "framer-motion";
@@ -51,47 +51,70 @@ const services: ServiceProps[] = [
   },
 ];
 
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 300 : -300, 
+  }),
+  center: {
+    x: 0,
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 300 : -300, 
+  }),
+};
+
 const OurServices = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeService = services[activeIndex];
+  const [direction, setDirection] = useState(0); 
+  
+  const activeService = services[activeIndex] || services[0];
+  const nextIndex = (activeIndex + 1) % services.length;
+  const nextService = services[nextIndex];
+  
 
-  // Helper for Mobile Accordion toggle based on index match
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    if (newDirection === 1) {
+      setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+    } else {
+      setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+    }
+  };
+
+  const handleDirectClick = (index: number) => {
+    setDirection(index > activeIndex ? 1 : -1);
+    setActiveIndex(index);
+  };
+
   const toggleMobile = (index: number) => {
     setActiveIndex(activeIndex === index ? -1 : index);
   };
 
   return (
-    // Light Theme Background and Text Color
-    <section className="bg-white text-[#0E0E0E] px-6 py-16 md:px-12 lg:px-20 w-full overflow-hidden" id='services'>
+    <section className="bg-white text-[#0E0E0E] px-6 py-16 md:px-0 md:pl-12 lg:px-0 lg:pl-20 w-full overflow-hidden" id='services'>
       
-      {/* -----------------------------
-          DESKTOP LAYOUT (Original Light Slider)
-          Hidden on Mobile
-         ----------------------------- */}
       <div className="hidden lg:block">
         <div className="flex flex-row justify-between items-start gap-12 mb-16">
           
-          {/* LEFT: Header & Arrows */}
           <div className="w-[40%]">
-            <p className="font-medium text-[20px] tracking-wide uppercase mb-3 text-gray-500 font-barlow">
+            <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-gray-500 font-barlow">
               // Why Choose Us?
             </p>
-            <h2 className="text-[42px] leading-[124%] mb-8 font-geist font-medium text-black">
+            <h2 className="text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium text-black">
               What Makes Us Different.
             </h2>
-            {/* Light Theme Arrows (Black borders/fills) */}
             <div className="flex gap-4">
               <button 
-                onClick={() => setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1))}
-                className="w-10 h-10 rounded-full flex items-center justify-center border border-black hover:bg-black hover:text-white transition-colors cursor-pointer"
+                onClick={() => paginate(-1)}
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
               </button>
               <button 
-                onClick={() => setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1))}
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-black text-white hover:bg-gray-800 transition-colors cursor-pointer"
+                onClick={() => paginate(1)}
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:text-white hover:bg-black transition-colors cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -100,70 +123,78 @@ const OurServices = () => {
             </div>
           </div>
 
-          {/* RIGHT: List with Light Theme Colors */}
           <div className="w-1/2 flex flex-col gap-5 items-start">
             {services.map((service, index) => (
               <h3
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleDirectClick(index)}
                 className={`
-                  font-geist text-[28px] font-medium cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
-                  ${index === activeIndex ? 'text-green-700' : 'text-gray-400 hover:text-gray-600'}
+                  font-geist text-[28px]  cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
+                  ${index === activeIndex ? 'text-[#164D04] font-bold' : 'text-gray-400 hover:text-[#164D04]'}
                 `}
               >
                 {service.mainTitle}
               </h3>
             ))}
             <div className="mt-6 w-full">
-                {/* Secondary Button defaults to dark text, perfect for light theme */}
-               <SecondaryButton text="Learn More About Us" />
+               <SecondaryButton text="Learn More About Us" href='/about-us' />
             </div>
           </div>
         </div>
 
-        {/* BOTTOM: Slider Content with Layout Swap */}
-        <div className="relative min-h-[450px]">
-          <AnimatePresence mode='wait'>
+<div className="relative h-[60vh] flex flex-col justify-between">
+        <div className="relative ">
+          <AnimatePresence mode='wait' custom={direction}>
             <motion.div
-              key={activeIndex} 
-              initial={{ opacity: 0, x: 20 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              exit={{ opacity: 0, x: -20 }}  
+              key={activeIndex}
+              custom={direction}
+              variants={slideVariants} 
+              initial="enter"
+              animate="center"
+              exit="exit"
               transition={{ duration: 0.4, ease: "easeInOut" }}
+              
               className={`
                 flex gap-10 items-end w-full h-full
                 ${activeIndex === 0 ? 'flex-row' : 'flex-row-reverse'}
               `}
             >
-              {/* Text */}
-              <div className="w-1/3 flex flex-col gap-4 pb-4">
-                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-1%] text-black">
+              <div className="w-[20%] flex flex-col gap-4 pb-4">
+                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-black">
                   {activeService.subTitle}
                 </h3>
-                <p className="text-gray-600 text-base font-geist leading-[140%] tracking-[-1%]">
+                <p className="text-gray-600 text-base font-geist leading-[140%] tracking-[-2%]">
                   {activeService.description}
                 </p>
               </div>
 
-              {/* Image */}
-              <div className="w-2/3 h-[450px] relative">
-                <Image 
-                  src={activeService.imageUrl} 
-                  alt={activeService.subTitle}
-                  fill
-                  className="object-cover rounded-lg"
-                  priority
-                />
+              <div className="w-[80%] h-[60vh] relative   flex overflow-hidden shadow-lg ">
+                <div className="w-[80%] h-full relative  overflow-hidden shadow-xl">
+                            <Image 
+                                src={activeService.imageUrl} 
+                                alt={activeService.subTitle} 
+                                fill
+                                className="object-cover object-center"
+                                priority
+                            />
+                        </div>
+
+                        {/* NEXT Image Peek (Takes 20%) */}
+                        <div className="w-[20%] h-full relative overflow-hidden ">
+                             <Image 
+                                src={nextService.imageUrl} 
+                                alt="Next" 
+                                fill
+                                className="object-cover object-left"
+                            />
+                        </div>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
+        </div>
       </div>
 
-      {/* -----------------------------
-          MOBILE LAYOUT (Accordion - Light Theme)
-          Visible only on lg:hidden
-         ----------------------------- */}
       <div className="flex flex-col lg:hidden w-full">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-gray-500 font-barlow">
@@ -178,18 +209,14 @@ const OurServices = () => {
             {services.map((service, index) => {
                 const isOpen = activeIndex === index;
                 return (
-                    // Light theme border color
                     <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
-                        {/* Header Row */}
                         <div 
                             className="flex justify-between items-start gap-4 cursor-pointer"
                             onClick={() => toggleMobile(index)}
                         >
-                            {/* Light theme text colors (Green active, Black inactive) */}
                             <h3 className={`text-lg font-medium leading-[130%] transition-colors ${isOpen ? 'text-green-700' : 'text-black'}`}>
                                 {service.mainTitle}
                             </h3>
-                            {/* Chevron Icon (Black) */}
                             <div className="mt-1 shrink-0 text-black">
                                 <svg 
                                     xmlns="http://www.w3.org/2000/svg" 
@@ -202,7 +229,6 @@ const OurServices = () => {
                             </div>
                         </div>
 
-                        {/* Expandable Body */}
                         <AnimatePresence>
                             {isOpen && (
                                 <motion.div
@@ -213,11 +239,10 @@ const OurServices = () => {
                                     className="overflow-hidden"
                                 >
                                     <div className="pt-4 flex flex-col gap-4">
-                                        {/* Light theme description color */}
                                         <p className="text-gray-600 text-sm leading-[150%] font-geist">
                                             {service.description}
                                         </p>
-                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden">
+                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
                                             <Image 
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 

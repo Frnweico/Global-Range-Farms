@@ -51,8 +51,8 @@ const OurProducts: React.FC = () => {
             We offer well-bred, high-quality livestock for all your needs, from family occasions to festive celebrations.
           </p>
           <div className="flex flex-wrap gap-4">
-            <SecondaryButton text='View Our Products' className='font-medium text-base leading-[150%] tracking-[-1%]' />
-            <SecondaryButton text='Schedule A Visit' className='font-medium text-base leading-[150%] tracking-[-1%]' />
+            <SecondaryButton text='View Our Products' className='font-medium text-base leading-[150%] tracking-[-1%]' href='/products' />
+            <SecondaryButton text='Schedule A Visit' className='font-medium text-base leading-[150%] tracking-[-1%]' href="https://wa.link/gobmim" />
           </div>
         </div>
       </div>

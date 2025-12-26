@@ -31,7 +31,7 @@ const testimonials: TestimonialProps[] = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-white px-6 py-20 md:px-12 lg:px-20 w-full">
+    <section className="bg-white px-6 py-20 md:px-12 lg:px-20 w-full" id="testimonials">
       <div className="flex flex-col  gap-5 items-start w-full">
 
         <div className="flex flex-col items-start gap-4 w-full font-barlow">

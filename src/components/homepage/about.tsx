@@ -13,7 +13,7 @@ const About = () => {
             // About Us
           </p>
           
-             <SecondaryButton text="Read About Us" />
+             <SecondaryButton text="Read About Us" href='/about-us' />
         </div>
 
         <div className="flex flex-col w-full lg:w-[80%] justify-between">

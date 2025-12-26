@@ -51,44 +51,72 @@ const services: ServiceProps[] = [
   },
 ];
 
+// --- SLIDE VARIANTS (Same as Light Version) ---
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 300 : -300, 
+    opacity: 1, 
+  }),
+  center: {
+    x: 0,
+    opacity: 1, 
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 300 : -300, 
+    opacity: 1, 
+  }),
+};
+
 const ServicesAbout = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeService = services[activeIndex];
+  const [direction, setDirection] = useState(0); 
+  
+  const activeService = services[activeIndex] || services[0];
 
-  // Helper for Mobile Accordion toggle
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    if (newDirection === 1) {
+      setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+    } else {
+      setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+    }
+  };
+
+  const handleDirectClick = (index: number) => {
+    setDirection(index > activeIndex ? 1 : -1);
+    setActiveIndex(index);
+  };
+
   const toggleMobile = (index: number) => {
     setActiveIndex(activeIndex === index ? -1 : index);
   };
 
   return (
-    <section className="bg-[#133405] text-white px-6 py-16 md:px-12 lg:px-20 w-full overflow-hidden" id='services'>
+    <section className="bg-[#164D04] text-white px-6 py-16 md:px-12 lg:px-20 w-full overflow-hidden" id='services'>
       
-      {/* -----------------------------
-          DESKTOP LAYOUT (Hidden on Mobile)
-         ----------------------------- */}
+     {/* desktop  */}
       <div className="hidden lg:block">
         <div className="flex flex-row justify-between items-start gap-12 mb-16">
           
-          {/* LEFT: Header & Arrows */}
           <div className="w-[40%]">
-            <p className="font-medium text-[20px] tracking-wide uppercase mb-3 text-white/70 font-barlow">
+            <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-white/70 font-barlow">
               // Why Choose Us?
             </p>
-            <h2 className="text-[42px] leading-[124%] mb-8 font-geist font-medium">
+            <h2 className="text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium">
               What Makes Us Different.
             </h2>
             <div className="flex gap-4">
               <button 
-                onClick={() => setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1))}
-                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/30 hover:bg-white hover:text-[#133405] transition-colors cursor-pointer"
+                onClick={() => paginate(-1)}
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#164D04] transition-colors cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
               </button>
               <button 
-                onClick={() => setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1))}
-                className="w-10 h-10 rounded-full flex items-center justify-center border border-white/30 hover:bg-white hover:text-[#133405] transition-colors cursor-pointer"
+                onClick={() => paginate(1)}
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#164D04] transition-colors cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -97,15 +125,14 @@ const ServicesAbout = () => {
             </div>
           </div>
 
-          {/* RIGHT: List */}
           <div className="w-1/2 flex flex-col gap-5 items-start">
             {services.map((service, index) => (
               <h3
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleDirectClick(index)}
                 className={`
-                  font-geist text-[28px] font-medium cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
-                  ${index === activeIndex ? 'text-white' : 'text-white/40 hover:text-white/70'}
+                  font-geist text-[28px] cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
+                  ${index === activeIndex ? 'text-white font-bold' : 'text-white/70 hover:text-white'}
                 `}
               >
                 {service.mainTitle}
@@ -118,14 +145,17 @@ const ServicesAbout = () => {
         </div>
 
         {/* BOTTOM: Slider Content */}
-        <div className="relative min-h-[450px]">
-          <AnimatePresence mode='wait'>
+        <div className="relative h-[60vh] overflow-hidden">
+          <AnimatePresence mode='wait' custom={direction}>
             <motion.div
               key={activeIndex} 
-              initial={{ opacity: 0, x: 20 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              exit={{ opacity: 0, x: -20 }}  
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }} 
+              
               className={`
                 flex gap-10 items-end w-full h-full
                 ${activeIndex === 0 ? 'flex-row' : 'flex-row-reverse'}
@@ -133,16 +163,15 @@ const ServicesAbout = () => {
             >
               {/* Text */}
               <div className="w-1/3 flex flex-col gap-4 pb-4">
-                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-1%]">
+                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%]">
                   {activeService.subTitle}
                 </h3>
-                <p className="text-white/80 text-base font-geist leading-[140%] tracking-[-1%]">
+                <p className="text-white/80 text-base font-geist leading-[140%] tracking-[-2%]">
                   {activeService.description}
                 </p>
               </div>
 
-              {/* Image */}
-              <div className="w-2/3 h-[450px] relative">
+              <div className="w-2/3 h-[60vh] relative rounded-lg">
                 <Image 
                   src={activeService.imageUrl} 
                   alt={activeService.subTitle}
@@ -157,7 +186,7 @@ const ServicesAbout = () => {
       </div>
 
       {/* -----------------------------
-          MOBILE LAYOUT (Accordion)
+          MOBILE LAYOUT (Accordion - Dark Theme)
           Visible only on lg:hidden
          ----------------------------- */}
       <div className="flex flex-col lg:hidden w-full">
@@ -210,7 +239,8 @@ const ServicesAbout = () => {
                                         <p className="text-white/80 text-sm leading-[150%] font-geist">
                                             {service.description}
                                         </p>
-                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden">
+                                        {/* Added bg-white/10 placeholder */}
+                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-white/10">
                                             <Image 
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 

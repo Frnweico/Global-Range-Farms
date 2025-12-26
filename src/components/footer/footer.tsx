@@ -31,6 +31,7 @@ const FooterMain = () => {
               bgColor="bg-[#4ACD20]" 
               textColor="text-[#0E0E0E]"
               showIcon={true}
+              href="https://wa.link/gobmim"
             />
           </div>
         </div>
@@ -41,15 +42,15 @@ const FooterMain = () => {
             <h4 className="text-white font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Farm</h4>
             <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
               <Link href="/products" className="hover:text-[#4ACD20] transition-colors">Our Livestock</Link>
-              <Link href="/services" className="hover:text-[#4ACD20] transition-colors">Services</Link>
+              <Link href="/#services" className="hover:text-[#4ACD20] transition-colors">Services</Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-6">
             <h4 className="text-white font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Resources</h4>
             <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
-              <Link href="/faqs" className="hover:text-[#4ACD20] transition-colors">FAQs</Link>
-              <Link href="/testimonials" className="hover:text-[#4ACD20] transition-colors">Testimonials</Link>
+              <Link href="/#faqs" className="hover:text-[#4ACD20] transition-colors">FAQs</Link>
+              <Link href="/#testimonials" className="hover:text-[#4ACD20] transition-colors">Testimonials</Link>
             </div>
           </div>
 
@@ -57,7 +58,7 @@ const FooterMain = () => {
             <h4 className="text-white font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Company</h4>
             <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
               <Link href="/about-us" className="hover:text-[#4ACD20] transition-colors">About Us</Link>
-              <Link href="/why-choose-us" className="hover:text-[#4ACD20] transition-colors">Why Choose Us</Link>
+              <Link href="/#services" className="hover:text-[#4ACD20] transition-colors">Why Choose Us</Link>
             </div>
           </div>
 

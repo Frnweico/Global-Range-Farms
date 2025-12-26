@@ -36,6 +36,7 @@ const Hero = () => {
                 bgColor="bg-[#3ed634]" 
                 textColor="text-black"
                 showIcon={true}
+                href="/products"
                 className="text-base font-medium leading-[150%] tracking-[-1%] text-[#0E0E0E]"
               />
               
@@ -44,6 +45,7 @@ const Hero = () => {
                 bgColor="bg-white" 
                 textColor="text-black"
                 showIcon={false}
+                href="https://wa.link/gobmim"
                  className="text-base font-medium leading-[150%] tracking-[-1%] text-[#0E0E0E]"
               />
             </div>

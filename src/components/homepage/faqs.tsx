@@ -43,7 +43,7 @@ const FAQS = () => {
   };
 
   return (
-    <section className="bg-white pb-20 px-6 md:px-12 lg:px-20 w-full">
+    <section className="bg-white pb-20 px-6 md:px-12 lg:px-20 w-full" id='faqs'>
       
       <div className="text-center mb-8 font-barlow">
         <p className="text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-wide uppercase mb-3 ">

@@ -24,7 +24,7 @@ const Order = () => {
               bgColor="bg-[#E2A918]" 
               textColor="text-[#0E0E0E]"
               showIcon={true}
-              href="/contact" 
+              href="https://wa.link/gobmim"
               />
               </div>
 
