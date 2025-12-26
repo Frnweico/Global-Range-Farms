@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../button/page";
-import { usePathname } from "next/navigation"; 
+import { usePathname, useRouter } from "next/navigation"; 
 import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = () => {
@@ -14,6 +14,7 @@ const Nav = () => {
   const [isDarkSection, setIsDarkSection] = useState(false); 
   
   const pathname = usePathname(); 
+  const router = useRouter();
   const isHome = pathname === "/";
   const lastScrollY = useRef(0);
 
@@ -67,12 +68,14 @@ const Nav = () => {
 
   const handleContactClick = (e?: React.MouseEvent) => {
     setIsOpen(false); 
-    if (isHome) {
-      e?.preventDefault(); 
-      const element = document.getElementById("contact-us");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+    
+    const element = document.getElementById("contact-us");
+    
+    if (element) {
+      e?.preventDefault();
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#contact-us");
     }
   };
 
@@ -118,7 +121,7 @@ const Nav = () => {
             <Button 
                 text="Contact Us" 
                 bgColor="bg-[#4ACD20]" 
-                textColor="text-[#0E0E0E]" // Force black text on button for readability
+                textColor="text-[#0E0E0E]" 
                 className="" 
                 onClick={handleContactClick}
                 showIcon={false}

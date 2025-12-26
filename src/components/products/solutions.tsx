@@ -105,7 +105,7 @@ const OurSolutions = () => {
                         {option.description}
                       </p>
                       
-                      <SecondaryButton text="Get in Touch" />
+                      <SecondaryButton text="Get in Touch" href="https://wa.link/gobmim"/>
                     </div>
                   </motion.div>
                 )}

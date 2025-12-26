@@ -5,6 +5,7 @@ import Nav from "@/components/nav/page";
 import FooterSection from "@/components/footer/page";
 import ScrollToTop from "@/components/ScrollToTop";
 import HashScroll from "@/components/HashScroll";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,8 +44,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} ${outfit.variable} antialiased`}
       >
-        <ScrollToTop />
+        <Suspense>
         <HashScroll />
+        </Suspense>
+        <ScrollToTop />
         <header className="absolute top-0 left-0 w-full z-50">
           <Nav />
         </header>
