@@ -11,8 +11,8 @@ const ContactUs = () => {
             <h3 className="text-5xl md:text-6xl lg:text-[76px] leading-[106%] tracking-[-3%] text-[#0C1515] font-geist font-medium">Let's talk</h3>
           </div>
           <div className='items-end flex justify-between gap-6 text-[#0E0E0E] text-sm leading-[150%] tracking-[-1%] font-geist '>
-            <Link href={""} className='no-underline hover:underline transition-all duration-300'>/FACEBOOK</Link>
             <Link href={""} className='no-underline hover:underline transition-all duration-300'>/INSTAGRAM</Link>
+            <Link href={""} className='no-underline hover:underline transition-all duration-300'>/FACEBOOK</Link>
             <Link href={""} className='no-underline hover:underline transition-all duration-300'>/YOUTUBE</Link>
           </div>
         </div>
@@ -95,6 +95,12 @@ const ContactUs = () => {
             </Link>
         </div>
 
+         <div className='flex gap-6 text-[#0E0E0E] text-sm leading-[150%] tracking-[-1%] font-geist uppercase'>
+            <Link href={""}>/INSTAGRAM</Link>
+            <Link href={""}>/FACEBOOK</Link>
+            <Link href={""}>/YOUTUBE</Link>
+        </div>
+
 <div className='flex flex-col gap-4'>
         {/* 4. Kara Market */}
         <div className="flex flex-col gap-1">
@@ -116,13 +122,6 @@ const ContactUs = () => {
             </p>
         </div>
 </div>
-
-        {/* 6. Socials (Bottom Row) */}
-        <div className='flex gap-6 mt-4 text-[#0E0E0E] text-sm leading-[150%] tracking-[-1%] font-geist uppercase'>
-            <Link href={""}>/FACEBOOK</Link>
-            <Link href={""}>/INSTAGRAM</Link>
-            <Link href={""}>/YOUTUBE</Link>
-        </div>
 
       </div>
 

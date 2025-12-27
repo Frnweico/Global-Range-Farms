@@ -49,7 +49,7 @@ const FAQS = () => {
         <p className="text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-wide uppercase mb-3 ">
             // FAQS
         </p>
-        <h3 className="text-3xl md:text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0E0E0E] ">
+        <h3 className="text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0E0E0E] ">
             Questions About Our <br className="hidden md:block" /> Farm & Products
         </h3>
       </div>

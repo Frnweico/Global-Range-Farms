@@ -65,7 +65,7 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         
         {/* Set 1 */}
         {images.map((src, idx) => (
-          <div key={`set1-${idx}`} className="relative w-[280px] h-[60vh] md:w-[400px] flex-shrink-0  overflow-hidden">
+          <div key={`set1-${idx}`} className="relative w-[280px] h-[60vh] md:w-[400px] shrink-0  overflow-hidden">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
@@ -76,7 +76,7 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         ))}
 
         {images.map((src, idx) => (
-          <div key={`set2-${idx}`} className="relative  flex-shrink-0 overflow-hidden">
+          <div key={`set2-${idx}`} className="relative  shrink-0 overflow-hidden">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}

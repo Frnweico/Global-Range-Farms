@@ -36,7 +36,7 @@ const ImageGallery = () => {
     </div>
 
     {/* mobile  */}
-    <div className='flex flex-col gap-3 md:hidden py-12 w-[60%] mx-auto'>
+    <div className='flex flex-col gap-3 md:hidden py-12 w-[80%] mx-auto'>
       <div className='flex gap-1 justify-between'>
 <div className='flex flex-col gap-2'>
       <Image src={'/images/pngs/gallery1.png'} alt='goats' className='fill' width={153} height={311}/>
@@ -53,12 +53,12 @@ const ImageGallery = () => {
           <Image src={'/images/pngs/gallery7.png'} alt='men' width={191} height={189}/>
         </div>
         <div className='flex flex-col gap-2 justify-between'>
-          <Image src={'/images/pngs/gallery11.png'} alt='leaves' width={151} height={200} />
+          <Image src={'/images/pngs/gallery11Mobile.png'} alt='leaves' width={151} height={200} />
           <Image src={'/images/pngs/gallery6.png'} alt='dog' width={151} height={106}/>
         </div>
       </div>
       <div className='flex flex-col gap-2 justify-between'>
-        <Image src={'/images/pngs/gallery10.png'} alt='rams' width={350} height={121}/>
+        <Image src={'/images/pngs/gallery10Mobile.png'} alt='rams' width={350} height={121}/>
         <Image src={'/images/pngs/gallery8.png'} alt='sheep' width={350} height={254}/>
       </div>
     </div>

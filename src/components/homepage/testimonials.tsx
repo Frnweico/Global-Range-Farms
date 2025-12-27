@@ -38,11 +38,11 @@ const Testimonials = () => {
           <p className="text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-wide uppercase">
             // Reviews
           </p>
-          <div className="flex items-center justify-between w-[80%]">
+          <div className="flex items-center justify-between w-full md:w-[80%]">
           <h3 className="text-3xl md:text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0C1515]">
             What People Say About Us
           </h3>
-          <SecondaryButton text="Read About Us" />
+          <SecondaryButton text="Read About Us" className="hidden md:block" />
           </div>
         </div>
 
@@ -68,7 +68,7 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-
+ <SecondaryButton text="Read About Us" className="block md:hidden" />
       </div>
     </section>
   )
