@@ -56,7 +56,6 @@ const productData = [
 ];
 
 // 2. REUSABLE MARQUEE COMPONENT
-// This handles the infinite scrolling animation
 const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
   return (
     <div className="relative w-full overflow-hidden mt-8 md:mt-12">
@@ -65,22 +64,24 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         
         {/* Set 1 */}
         {images.map((src, idx) => (
-          <div key={`set1-${idx}`} className="relative w-[280px] h-[60vh] md:w-[400px] shrink-0  overflow-hidden">
+          <div key={`set1-${idx}`} className="relative h-[60vh] aspect-3/4 w-[40vw] shrink-0  overflow-hidden">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
                 fill
+                sizes="(max-width: 768px) 70vw, 30vw"
                 className="object-cover"
              />
           </div>
         ))}
 
         {images.map((src, idx) => (
-          <div key={`set2-${idx}`} className="relative  shrink-0 overflow-hidden">
+          <div key={`set2-${idx}`} className="relative h-[60vh] aspect-3/4 w-[40vw] shrink-0  overflow-hidden ">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
                 fill
+                sizes="(max-width: 768px) 70vw, 30vw"
                 className="object-cover"
              />
           </div>
