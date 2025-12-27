@@ -153,7 +153,7 @@ const ServicesAbout = () => {
                                 </p>
                             </div>
 
-                            <div className="w-[65%] h-[55vh] relative rounded-lg overflow-hidden shadow-lg">
+                            <div className="w-[72%] h-[55vh] relative rounded-lg overflow-hidden shadow-lg">
                                 <Image 
                                     src={service.imageUrl} 
                                     alt={service.subTitle} 
@@ -170,7 +170,7 @@ const ServicesAbout = () => {
 
       </div>
 
-      {/* MOBILE LAYOUT (Untouched - using your existing dark theme code) */}
+      {/* MOBILE LAYOUT */}
       <div className="flex flex-col lg:hidden w-full">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-white/70 font-barlow">

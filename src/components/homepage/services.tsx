@@ -138,7 +138,7 @@ const OurServices = () => {
                         <div 
                             key={index}
                             className={`
-                                w-[70%] shrink-0 flex items-end justify-between border h-full
+                                w-[70%] shrink-0 flex items-end justify-between h-full
                                 ${isFirst ? 'flex-row' : 'flex-row-reverse'} 
                             `}
                         >
@@ -153,7 +153,7 @@ const OurServices = () => {
                             </div>
 
                             {/* Image Block */}
-                            <div className="w-[65%] h-[55vh] relative rounded-xs overflow-hidden shadow-lg">
+                            <div className="w-[72%] h-[55vh] relative rounded-xs overflow-hidden shadow-lg">
                                 <Image 
                                     src={service.imageUrl} 
                                     alt={service.subTitle} 
