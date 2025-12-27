@@ -4,7 +4,7 @@ import React from "react";
 interface SecondaryButtonProps {
   text: string;
   onClick?: () => void;
-  href?: string; // Added optional href
+  href?: string; 
   textColor?: string;
   className?: string;
 }
@@ -19,7 +19,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   const baseClasses = `
     ${textColor} 
     ${className}
-    group flex items-center gap-2 
+    group flex! items-center gap-2 
     border-b border-[#0A0A0A33] 
     pb-1 w-fit
     font-medium text-sm sm:text-base

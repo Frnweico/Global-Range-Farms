@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../button/page";
+import Button from "../ui/MainButton";
 import { usePathname, useRouter } from "next/navigation"; 
 import { motion, AnimatePresence } from "framer-motion";
 

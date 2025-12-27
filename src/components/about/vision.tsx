@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ColoredLine from "../coloredLine/page";
+import ColoredLine from "../ui/ColoredLine";
 
 const visionData = [
   {

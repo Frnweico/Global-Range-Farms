@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SecondaryButton from "../secondaryButton/page"; 
+import SecondaryButton from "../ui/secondaryButton"; 
 
 interface TestimonialProps {
   imageUrl: string;
@@ -42,13 +42,18 @@ const Testimonials = () => {
             <h3 className="text-3xl md:text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0C1515]">
               What People Say About Us
             </h3>
-            <SecondaryButton text="Read About Us" className="hidden md:block w-[60%]" />
+
+<div className="hidden md:block">
+            <SecondaryButton text="Read About Us"  />
+</div>
           </div>
         </div>
 
         <div className="
-            flex overflow-x-auto snap-x snap-mandatory gap-6 w-full pb-4
-            md:grid md:grid-cols-2 lg:grid-cols-3 md:pb-0 md:overflow-visible md:min-h-[65vh] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] h-full items-stretch">
+            grid grid-flow-col auto-cols-[90%] gap-4 overflow-x-auto snap-x snap-mandatory pb-4 w-full
+            md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 md:auto-cols-auto md:pb-0 md:overflow-visible md:min-h-[65vh] 
+            [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
+        ">
           {testimonials.map((item, index) => (
             <div 
                 key={index} 
@@ -79,7 +84,9 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <SecondaryButton text="Read About Us" className="block md:hidden" />
+<div className="block md:hidden">
+        <SecondaryButton text="Read About Us"  />
+        </div>
       </div>
     </section>
   )

@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../button/page'; 
+import Button from '../ui/MainButton'; 
 
 const FooterMain = () => {
   

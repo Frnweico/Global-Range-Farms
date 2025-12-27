@@ -1,5 +1,5 @@
 import React from 'react';
-import SecondaryButton from '../secondaryButton/page';
+import SecondaryButton from '../ui/secondaryButton';
 import Link from 'next/link';
 
 interface Product {

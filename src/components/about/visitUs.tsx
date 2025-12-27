@@ -1,5 +1,5 @@
-import Button from "../button/page";
-import ColoredLine from "../coloredLine/page";
+import Button from "../ui/MainButton";
+import ColoredLine from "../ui/ColoredLine";
 
 const VisitUs = () => {
   return (

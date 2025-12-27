@@ -1,4 +1,4 @@
-import SecondaryButton from '../secondaryButton/page'; 
+import SecondaryButton from '../ui/secondaryButton'; 
 import Image from 'next/image';
 import Stats from './stats';
 

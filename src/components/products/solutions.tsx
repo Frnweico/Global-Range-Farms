@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import SecondaryButton from "../secondaryButton/page";
+import SecondaryButton from "../ui/secondaryButton";
 
 // Data matching the image text
 const options = [

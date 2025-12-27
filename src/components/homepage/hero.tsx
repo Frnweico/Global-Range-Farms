@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../button/page"; 
+import Button from "../ui/MainButton"; 
 
 const Hero = () => {
   return (

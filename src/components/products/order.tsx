@@ -1,4 +1,4 @@
-import Button from "../button/page";
+import Button from "../ui/MainButton";
 
 const Order = () => {
   return (

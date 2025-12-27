@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from "next/image";
-import SecondaryButton from "../secondaryButton/page"; 
+import SecondaryButton from "../ui/secondaryButton"; 
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ServiceProps {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ColoredLine from "../coloredLine/page"; 
+import ColoredLine from "../ui/ColoredLine"; 
 
 const VideoSection = () => {
   const videoUrl = ""; 
@@ -34,7 +34,6 @@ const VideoSection = () => {
         />
       )}
 
-      <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none"></div>
     </section>
   );
 };
