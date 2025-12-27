@@ -3,9 +3,10 @@ import { Geist, Geist_Mono, Barlow, Outfit } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/page";
 import FooterSection from "@/components/footer/page";
-import ScrollToTop from "@/components/ScrollToTop";
-import HashScroll from "@/components/HashScroll";
-import { Suspense } from "react";
+// import ScrollToTop from "@/components/ScrollToTop";
+// import HashScroll from "@/components/HashScroll";
+// import { Suspense } from "react";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,10 +45,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} ${outfit.variable} antialiased`}
       >
-        <Suspense>
+        {/* <Suspense>
         <HashScroll />
         </Suspense>
-       <Suspense fallback={null}><ScrollToTop /></Suspense> 
+       <Suspense fallback={null}><ScrollToTop /></Suspense>  */}
         <header className="absolute top-0 left-0 w-full z-50">
           <Nav />
         </header>
@@ -55,6 +56,7 @@ export default function RootLayout({
         {children}
         </main>
         <FooterSection />
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -86,7 +86,7 @@ const FooterMain = () => {
        <div 
             onClick={scrollToTop}
             className={`
-                absolute bottom-4 right-0 lg:bottom-4 lg:right-4 z-20 cursor-pointer group flex items-center gap-3
+                absolute bottom-4 right-0 lg:bottom-4 lg:right-4 z-20 cursor-pointer group hidden lg:flex items-center gap-3
                 bg-transparent p-0
                 lg:bg-[#0E0E0E] lg:px-6 lg:py-2 lg:rounded-full
             `}

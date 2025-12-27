@@ -195,7 +195,7 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:hidden w-full pr-6">
+      <div className="flex flex-col lg:hidden w-full px-6">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-gray-500 font-barlow">
               // Why Choose Us?

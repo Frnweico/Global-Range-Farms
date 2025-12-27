@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from "next/image";
 import Button from "../button/page"; 
 import ColoredLine from '../coloredLine/page';
 
 const premiumData = [
   {
-    title: "Delivery Service",
-    descriptionPrefix: "Delivery:",
-    description: "You don’t need to worry about transport. We deliver healthy livestock to customers across Lagos, Ogun, and Southwest Nigeria. (Free for bulk orders). Delivery also available to other locations on request. Terms and conditions apply."
-  },
-  {
     title: "Buy And Keep Service",
     descriptionPrefix: "Buy & Keep:",
-    description: "Secure your livestock now and pick it up when you're ready. We feed, groom, and maintain them in perfect health until your event or slaughter day. Small maintenance fee applies."
-  }
+    description: "A premium way to plan ahead. Secure your livestock early and leave the care to us. We house, feed, and monitor your animals until your chosen pickup or slaughter date, so you get peace of mind, assured quality, and zero stress when it matters most.",
+    imgUrl: "/images/pngs/buytokeepImg.png"
+  },
+  {
+    title: "Delivery Service",
+    descriptionPrefix: "Delivery:",
+    description: "You don’t need to worry about transport. We deliver healthy livestock to customers across Lagos, Ogun, and Southwest Nigeria. (Free for bulk orders). Delivery also available to other locations on request. Terms and conditions apply.",
+    imgUrl: "/images/pngs/premiumServicesImg.png"
+  },
 ];
 
 const PremiumServices = () => {
@@ -34,9 +36,9 @@ const PremiumServices = () => {
         </h3>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-14">
+      <div className="flex flex-col lg:flex-row justify-between md:items-end gap-10 mb-14">
         
-        <div className="flex flex-col lg:w-1/4 font-geist">
+        <div className="flex flex-col lg:w-1/4 font-geist ">
           {premiumData.map((item, index) => (
             <button
               key={index}
@@ -67,7 +69,7 @@ const PremiumServices = () => {
         </div>
 
         {/* 3. Right Column: CTA Button */}
-        <div className="lg:w-auto flex justify-start lg:justify-end">
+        <div className="lg:w-auto flex justify-start self-center lg:self-end lg:justify-end">
           <Button 
             text="Contact Us" 
             bgColor="bg-[#E2A918]" 
@@ -82,7 +84,7 @@ const PremiumServices = () => {
       {/* --- BOTTOM SECTION: LARGE IMAGE --- */}
       <div className="w-full relative h-[300px] md:h-[500px] overflow-hidden rounded-sm">
         <Image 
-          src="/images/pngs/premiumServicesImg.png" 
+          src={activeService.imgUrl} 
           alt="Premium Livestock Delivery" 
           fill
           className="object-cover opacity-90"
