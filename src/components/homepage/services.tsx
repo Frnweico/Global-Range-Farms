@@ -91,7 +91,7 @@ const OurServices = () => {
   };
 
   return (
-    <section className="bg-white text-[#0E0E0E] px-6 py-16 md:px-0 md:pl-12 lg:px-0 lg:pl-20 w-full overflow-hidden" id='services'>
+    <section className="bg-white text-[#0E0E0E] py-16 md:px-0 md:pl-12 lg:px-0 lg:pl-20 w-full overflow-hidden" id='services'>
       
       <div className="hidden lg:block">
         <div className="flex flex-row justify-between items-start gap-12 mb-16">
@@ -195,7 +195,7 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:hidden w-full">
+      <div className="flex flex-col lg:hidden w-full pr-6">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-gray-500 font-barlow">
               // Why Choose Us?
@@ -236,13 +236,13 @@ const OurServices = () => {
                                     animate={{ height: "auto", opacity: 1 }}
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="overflow-hidden"
+                                    className="overflow-hidden h-[50vh]"
                                 >
                                     <div className="pt-4 flex flex-col gap-4">
                                         <p className="text-gray-600 text-sm leading-[150%] font-geist">
                                             {service.description}
                                         </p>
-                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
+                                        <div className="relative w-full  rounded-lg overflow-hidden h-[50vh]">
                                             <Image 
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 

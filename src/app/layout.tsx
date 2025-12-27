@@ -47,7 +47,7 @@ export default function RootLayout({
         <Suspense>
         <HashScroll />
         </Suspense>
-        <ScrollToTop />
+       <Suspense fallback={null}><ScrollToTop /></Suspense> 
         <header className="absolute top-0 left-0 w-full z-50">
           <Nav />
         </header>

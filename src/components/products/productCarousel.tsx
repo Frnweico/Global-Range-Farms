@@ -8,10 +8,12 @@ const productData = [
     title: "Rams",
     description: "Quality rams known for their strong build, clean coats, and healthy weight, perfect for festive seasons like Sallah, weddings, and family events.",
     images: [
-      "/images/pngs/ram1.png",
-      "/images/pngs/ram2.png",
-      "/images/pngs/ram3.png", 
-      "/images/pngs/ram1.png", 
+      "/images/pngs/Rams01.png",
+      "/images/pngs/Rams02.png",
+      "/images/pngs/Rams03.png", 
+      "/images/pngs/Rams04.png", 
+      "/images/pngs/Rams05.png", 
+      "/images/pngs/Rams06.png", 
     ]
   },
   {
@@ -19,10 +21,12 @@ const productData = [
     title: "Goats",
     description: "Lean, tasty, raised in hygienic environment. A reliable choice for households, caterers, and meat vendors who value quality and freshness.",
     images: [
-      "/images/pngs/goat1.png",
-      "/images/pngs/goat2.png",
-      "/images/pngs/goat3.png",
-      "/images/pngs/goat1.png",
+      "/images/pngs/Goats01.png",
+      "/images/pngs/Goats02.png",
+      "/images/pngs/Goats03.png",
+      "/images/pngs/Goats04.png",
+      "/images/pngs/Goats05.png",
+      "/images/pngs/Goats06.png",
     ]
   },
   {
@@ -30,10 +34,11 @@ const productData = [
     title: "Cows",
     description: "Big, Fat, Strong, well-fed, and ideal for large gatherings, restaurant supply, and special occasions. Each one is bred for size, health, and excellent meat quality.",
     images: [
-      "/images/pngs/cow1.png",
-      "/images/pngs/cow2.png",
-      "/images/pngs/cow3.png",
-      "/images/pngs/cow1.png",
+      "/images/pngs/Cows01.png",
+      "/images/pngs/Cows02.png",
+      "/images/pngs/Cows03.png",
+      "/images/pngs/Cows04.png",
+      "/images/pngs/Cows05.png",
     ]
   },
   {
@@ -41,10 +46,11 @@ const productData = [
     title: "Poultry",
     description: "Large, nutritious eggs and healthy, well-grown chickens that deliver better flavour, richer nutrition, and real value for your home or business.",
     images: [
-      "/images/pngs/poultry1.png",
-      "/images/pngs/poultry2.png",
-      "/images/pngs/poultry3.png",
-      "/images/pngs/poultry1.png",
+      "/images/pngs/Poultry01.png",
+      "/images/pngs/Poultry02.png",
+      "/images/pngs/Poultry03.png",
+      "/images/pngs/Poultry04.png",
+      "/images/pngs/Poultry05.png",
     ]
   }
 ];
@@ -59,7 +65,7 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         
         {/* Set 1 */}
         {images.map((src, idx) => (
-          <div key={`set1-${idx}`} className="relative w-[280px] h-[200px] md:w-[400px] md:h-[300px] flex-shrink-0 rounded-lg overflow-hidden">
+          <div key={`set1-${idx}`} className="relative w-[280px] h-[60vh] md:w-[400px] flex-shrink-0  overflow-hidden">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
@@ -70,7 +76,7 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         ))}
 
         {images.map((src, idx) => (
-          <div key={`set2-${idx}`} className="relative w-[280px] h-[200px] md:w-[400px] md:h-[300px] flex-shrink-0 rounded-lg overflow-hidden">
+          <div key={`set2-${idx}`} className="relative  flex-shrink-0 overflow-hidden">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
@@ -115,7 +121,7 @@ const ProductCarousel = () => {
               </h4>
 
               {/* Description */}
-              <p className="text-[#0E0E0E] text-xl md:text-2xl lg:text-[28px] leading-[140%] tracking-[-2%] font-geist w-[45%] ">
+              <p className="text-[#0E0E0E] text-xl md:text-2xl lg:text-[28px] leading-[140%] tracking-[-2%] font-geist md:w-[45%] ">
                 {product.description}
               </p>
             </div>
