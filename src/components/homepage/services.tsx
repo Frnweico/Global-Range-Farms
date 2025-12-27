@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from "next/image";
-import SecondaryButton from "../ui/secondaryButton"; 
+import SecondaryButton from '../ui/secondaryButton'; 
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ServiceProps {
@@ -15,7 +15,7 @@ interface ServiceProps {
 const services: ServiceProps[] = [
   {
     mainTitle: "Highly nutritious meat from well-fed Livestock",
-    subTitle: "Healthy & Well-fed Livestock",
+    subTitle: "Highly nutritious meat from well-fed Livestock",
     description: "Our animals are raised on a rich, balanced diet, so the meat you get is healthier, tastier, and packed with natural nutrients your family needs.",
     imageUrl: "/images/pngs/service1.png"
   },
@@ -51,29 +51,10 @@ const services: ServiceProps[] = [
   },
 ];
 
-const slideVariants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 300 : -300, 
-  }),
-  center: {
-    x: 0,
-  },
-  exit: (direction: number) => ({
-    x: direction < 0 ? 300 : -300, 
-  }),
-};
-
 const OurServices = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0); 
   
-  const activeService = services[activeIndex] || services[0];
-  const nextIndex = (activeIndex + 1) % services.length;
-  const nextService = services[nextIndex];
-  
-
   const paginate = (newDirection: number) => {
-    setDirection(newDirection);
     if (newDirection === 1) {
       setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
     } else {
@@ -82,7 +63,6 @@ const OurServices = () => {
   };
 
   const handleDirectClick = (index: number) => {
-    setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
   };
 
@@ -91,22 +71,24 @@ const OurServices = () => {
   };
 
   return (
-    <section className="bg-white text-[#0E0E0E] py-16 md:px-0 md:pl-12 lg:px-0 lg:pl-20 w-full overflow-hidden" id='services'>
+    <section className="bg-white text-[#0E0E0E] py-16 lg:pl-20 overflow-hidden w-full mx-auto" id='services'>
       
-      <div className="hidden lg:block">
-        <div className="flex flex-row justify-between items-start gap-12 mb-16">
+     {/* desktop  */}
+      <div className="hidden lg:flex flex-col gap-16 ">
+        
+        <div className="flex flex-row justify-between items-start gap-12 m">
           
           <div className="w-[40%]">
-            <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-gray-500 font-barlow">
+            <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-[#0E0E0E] font-barlow">
               // Why Choose Us?
             </p>
-            <h2 className="text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium text-black">
+            <h2 className="text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium text-[#0E0E0E]">
               What Makes Us Different.
             </h2>
             <div className="flex gap-4">
               <button 
                 onClick={() => paginate(-1)}
-                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors cursor-pointer"
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#0E0E0E] hover:text-white text-[#0E0E0E]  transition-colors cursor-pointer "
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -114,7 +96,7 @@ const OurServices = () => {
               </button>
               <button 
                 onClick={() => paginate(1)}
-                className="w-10 h-10 rounded-full flex items-center justify-center hover:text-white hover:bg-black transition-colors cursor-pointer"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white transition-colors cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -129,8 +111,8 @@ const OurServices = () => {
                 key={index}
                 onClick={() => handleDirectClick(index)}
                 className={`
-                  font-geist text-[28px]  cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
-                  ${index === activeIndex ? 'text-[#164D04] font-bold' : 'text-gray-400 hover:text-[#164D04]'}
+                  font-geist text-[28px] cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
+                  ${index === activeIndex ? 'text-[#164D04] font-medium' : 'text-[#0E0E0E] hover:text-[#164D04]'}
                 `}
               >
                 {service.mainTitle}
@@ -142,60 +124,56 @@ const OurServices = () => {
           </div>
         </div>
 
-<div className="relative h-[60vh] flex flex-col justify-between">
-        <div className="relative ">
-          <AnimatePresence mode='wait' custom={direction}>
-            <motion.div
-              key={activeIndex}
-              custom={direction}
-              variants={slideVariants} 
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              
-              className={`
-                flex gap-10 items-end w-full h-full
-                ${activeIndex === 0 ? 'flex-row' : 'flex-row-reverse'}
-              `}
+        {/* BOTTOM SECTION: CAROUSEL TRACK */}
+        <div className="w-full relative overflow-hidden">
+            <motion.div 
+                className="flex gap-10 w-full"
+                animate={{ x: `calc(-${activeIndex} * (70% + 40px))` }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <div className="w-[20%] flex flex-col gap-4 pb-4">
-                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-black">
-                  {activeService.subTitle}
-                </h3>
-                <p className="text-gray-600 text-base font-geist leading-[140%] tracking-[-2%]">
-                  {activeService.description}
-                </p>
-              </div>
+                {services.map((service, index) => {
+                    const isFirst = index === 0;
 
-              <div className="w-[80%] h-[60vh] relative   flex overflow-hidden shadow-lg ">
-                <div className="w-[80%] h-full relative  overflow-hidden shadow-xl">
-                            <Image 
-                                src={activeService.imageUrl} 
-                                alt={activeService.subTitle} 
-                                fill
-                                className="object-cover object-center"
-                                priority
-                            />
-                        </div>
+                    return (
+                        <div 
+                            key={index}
+                            className={`
+                                w-[70%] shrink-0 flex items-end justify-between border h-full
+                                ${isFirst ? 'flex-row' : 'flex-row-reverse'} 
+                            `}
+                        >
+                            {/* Text Content Block */}
+                            <div className="w-[25%] flex flex-col gap-4 justify-end h-full">
+                                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-[#0E0E0E]">
+                                    {service.subTitle}
+                                </h3>
+                                <p className="text-[#0E0E0E] text-base font-geist leading-[140%] tracking-[-2%]">
+                                    {service.description}
+                                </p>
+                            </div>
 
-                        {/* NEXT Image Peek (Takes 20%) */}
-                        <div className="w-[20%] h-full relative overflow-hidden ">
-                             <Image 
-                                src={nextService.imageUrl} 
-                                alt="Next" 
-                                fill
-                                className="object-cover object-left"
-                            />
+                            {/* Image Block */}
+                            <div className="w-[65%] h-[55vh] relative rounded-xs overflow-hidden shadow-lg">
+                                <Image 
+                                    src={service.imageUrl} 
+                                    alt={service.subTitle} 
+                                    fill
+                                    className="object-cover object-center"
+                                    priority={index === activeIndex} 
+                                />
+                            </div>
                         </div>
-              </div>
+                    );
+                })}
             </motion.div>
-          </AnimatePresence>
         </div>
-        </div>
+
       </div>
 
-      <div className="flex flex-col lg:hidden w-full px-6">
+      {/* -----------------------------
+          MOBILE LAYOUT (Unchanged)
+         ----------------------------- */}
+      <div className="flex flex-col lg:hidden w-full">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-gray-500 font-barlow">
               // Why Choose Us?
@@ -209,7 +187,7 @@ const OurServices = () => {
             {services.map((service, index) => {
                 const isOpen = activeIndex === index;
                 return (
-                    <div key={index} >
+                    <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
                         <div 
                             className="flex justify-between items-start gap-4 cursor-pointer"
                             onClick={() => toggleMobile(index)}
@@ -222,7 +200,7 @@ const OurServices = () => {
                                     xmlns="http://www.w3.org/2000/svg" 
                                     fill="none" viewBox="0 0 24 24" 
                                     strokeWidth={2} stroke="currentColor" 
-                                    className={`w-5 h-5 transition-transform duration-300 -rotate-180 ${isOpen ? 'rotate-0' : ''}`}
+                                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
@@ -236,13 +214,13 @@ const OurServices = () => {
                                     animate={{ height: "auto", opacity: 1 }}
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="overflow-hidden h-[50vh]"
+                                    className="overflow-hidden"
                                 >
                                     <div className="pt-4 flex flex-col gap-4">
                                         <p className="text-gray-600 text-sm leading-[150%] font-geist">
                                             {service.description}
                                         </p>
-                                        <div className="relative w-full  rounded-lg overflow-hidden h-[50vh]">
+                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
                                             <Image 
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 

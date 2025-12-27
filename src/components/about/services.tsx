@@ -51,30 +51,10 @@ const services: ServiceProps[] = [
   },
 ];
 
-// --- SLIDE VARIANTS (Same as Light Version) ---
-const slideVariants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 300 : -300, 
-    opacity: 1, 
-  }),
-  center: {
-    x: 0,
-    opacity: 1, 
-  },
-  exit: (direction: number) => ({
-    x: direction < 0 ? 300 : -300, 
-    opacity: 1, 
-  }),
-};
-
 const ServicesAbout = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0); 
   
-  const activeService = services[activeIndex] || services[0];
-
   const paginate = (newDirection: number) => {
-    setDirection(newDirection);
     if (newDirection === 1) {
       setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
     } else {
@@ -83,7 +63,6 @@ const ServicesAbout = () => {
   };
 
   const handleDirectClick = (index: number) => {
-    setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
   };
 
@@ -92,20 +71,22 @@ const ServicesAbout = () => {
   };
 
   return (
-    <section className="bg-[#164D04] text-white px-6 py-16 md:px-12 lg:px-20 w-full overflow-hidden" id='services'>
+    <section className="bg-[#164D04] px-6 py-16 md:px-12 lg:pl-20 lg:px-0 w-full overflow-hidden" id='services'>
       
-     {/* desktop  */}
-      <div className="hidden lg:block">
-        <div className="flex flex-row justify-between items-start gap-12 mb-16">
+      {/* DESKTOP LAYOUT */}
+      <div className="hidden lg:flex flex-col gap-16">
+        
+        {/* TOP SECTION */}
+        <div className="flex flex-row justify-between items-start gap-12">
           
           <div className="w-[40%]">
             <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-white/70 font-barlow">
               // Why Choose Us?
             </p>
-            <h2 className="text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium">
+            <h2 className="text-white text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium">
               What Makes Us Different.
             </h2>
-            <div className="flex gap-4">
+            <div className="flex gap-4 text-white">
               <button 
                 onClick={() => paginate(-1)}
                 className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#164D04] transition-colors cursor-pointer"
@@ -116,7 +97,7 @@ const ServicesAbout = () => {
               </button>
               <button 
                 onClick={() => paginate(1)}
-                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#164D04] transition-colors cursor-pointer"
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#164D04] transition-colors cursor-pointer "
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -132,63 +113,64 @@ const ServicesAbout = () => {
                 onClick={() => handleDirectClick(index)}
                 className={`
                   font-geist text-[28px] cursor-pointer leading-[124%] tracking-[-1%] transition-colors duration-300
-                  ${index === activeIndex ? 'text-white font-bold' : 'text-white/70 hover:text-white'}
+                  ${index === activeIndex ? 'text-white font-medium' : 'text-white/70 hover:text-white hover:opacity-100'}
                 `}
               >
                 {service.mainTitle}
               </h3>
             ))}
-            <div className="mt-6 w-full text-white">
-               <SecondaryButton text="Learn More About Us" textColor="text-white" />
+            <div className="mt-6 w-full">
+               <SecondaryButton text="Learn More About Us" textColor="text-white" href='/about-us' />
             </div>
           </div>
         </div>
 
-        {/* BOTTOM: Slider Content */}
-        <div className="relative h-[60vh] overflow-hidden">
-          <AnimatePresence mode='wait' custom={direction}>
-            <motion.div
-              key={activeIndex} 
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }} 
-              
-              className={`
-                flex gap-10 items-end w-full h-full
-                ${activeIndex === 0 ? 'flex-row' : 'flex-row-reverse'}
-              `}
+        {/* BOTTOM SECTION: CAROUSEL TRACK (Dark Version) */}
+        <div className="w-full relative h-[60vh] overflow-hidden">
+            <motion.div 
+                className="flex gap-10 h-full w-full"
+                animate={{ x: `calc(-${activeIndex} * (70% + 40px))` }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              {/* Text */}
-              <div className="w-1/3 flex flex-col gap-4 pb-4">
-                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%]">
-                  {activeService.subTitle}
-                </h3>
-                <p className="text-white/80 text-base font-geist leading-[140%] tracking-[-2%]">
-                  {activeService.description}
-                </p>
-              </div>
+                {services.map((service, index) => {
+                    const isFirst = index === 0;
 
-              <div className="w-2/3 h-[60vh] relative rounded-lg">
-                <Image 
-                  src={activeService.imageUrl} 
-                  alt={activeService.subTitle}
-                  fill
-                  className="object-cover rounded-lg"
-                  priority
-                />
-              </div>
+                    return (
+                        <div 
+                            key={index}
+                            className={`
+                                w-[70%] shrink-0 flex items-end justify-between h-full
+                                ${isFirst ? 'flex-row' : 'flex-row-reverse'} 
+                            `}
+                        >
+                            {/* Text Content Block */}
+                            <div className="w-[25%] flex flex-col gap-4 justify-end h-full">
+                                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-white">
+                                    {service.subTitle}
+                                </h3>
+                                <p className="text-white/70 text-base font-geist leading-[140%] tracking-[-2%]">
+                                    {service.description}
+                                </p>
+                            </div>
+
+                            <div className="w-[65%] h-[55vh] relative rounded-lg overflow-hidden shadow-lg">
+                                <Image 
+                                    src={service.imageUrl} 
+                                    alt={service.subTitle} 
+                                    fill
+                                    className="object-cover object-center"
+                                    priority={index === activeIndex} 
+                                />
+                            </div>
+                        </div>
+                    );
+                })}
             </motion.div>
-          </AnimatePresence>
         </div>
+
       </div>
 
-      {/* -----------------------------
-          MOBILE LAYOUT (Accordion - Dark Theme)
-          Visible only on lg:hidden
-         ----------------------------- */}
+      {/* MOBILE LAYOUT (Untouched - using your existing dark theme code) */}
       <div className="flex flex-col lg:hidden w-full">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-white/70 font-barlow">
@@ -203,8 +185,7 @@ const ServicesAbout = () => {
             {services.map((service, index) => {
                 const isOpen = activeIndex === index;
                 return (
-                    <div key={index} >
-                        {/* Header Row */}
+                    <div key={index} className="border-b border-white/10 pb-6 last:border-0">
                         <div 
                             className="flex justify-between items-start gap-4 cursor-pointer"
                             onClick={() => toggleMobile(index)}
@@ -212,20 +193,18 @@ const ServicesAbout = () => {
                             <h3 className={`text-lg font-medium leading-[130%] transition-colors ${isOpen ? 'text-white' : 'text-white/70'}`}>
                                 {service.mainTitle}
                             </h3>
-                            {/* Chevron Icon */}
                             <div className="mt-1 shrink-0">
                                 <svg 
                                     xmlns="http://www.w3.org/2000/svg" 
                                     fill="none" viewBox="0 0 24 24" 
                                     strokeWidth={2} stroke="currentColor" 
-                                    className={`w-5 h-5 transition-transform -rotate-180 duration-300 ${isOpen ? 'rotate-0' : ''}`}
+                                    className={`w-5 h-5 transition-transform duration-300 -rotate-180 ${isOpen ? 'rotate-0' : ''}`}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
                         </div>
 
-                        {/* Expandable Body */}
                         <AnimatePresence>
                             {isOpen && (
                                 <motion.div
@@ -239,7 +218,6 @@ const ServicesAbout = () => {
                                         <p className="text-white/80 text-sm leading-[150%] font-geist">
                                             {service.description}
                                         </p>
-                                        {/* Added bg-white/10 placeholder */}
                                         <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-white/10">
                                             <Image 
                                                 src={service.imageUrl} 

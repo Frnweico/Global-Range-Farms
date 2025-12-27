@@ -1,7 +1,7 @@
 import AboutHero from "@/components/about/hero";
-import ServicesAbout from "@/components/about/services";
 import Vision from "@/components/about/vision";
 import VisitUs from "@/components/about/visitUs";
+import OurServices from "@/components/homepage/services";
 import VideoSection from "@/components/homepage/video";
 
 const page = () => {
@@ -10,7 +10,7 @@ const page = () => {
       <AboutHero />
       <VideoSection />
       <Vision />
-      <ServicesAbout />
+      <OurServices />
       <VisitUs />
     </div>
   )

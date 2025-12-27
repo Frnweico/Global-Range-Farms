@@ -25,10 +25,10 @@ const PremiumServices = () => {
   const activeService = premiumData[activeIndex];
 
   return (
-    <section className="bg-[#0E0E0E] px-6 py-16 md:px-12 lg:px-20 w-full text-white relative">
+    <section className="bg-[#164D04] px-6 py-16 md:px-12 lg:px-20 w-full text-white relative">
       
-      <div className="mb-12">
-        <p className=" font-medium text-sm md:text-[18px] lg:text-[20px] tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow opacity-50">
+      <div className="mb-20">
+        <p className=" text-xl tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow opacity-50">
           // Premium
         </p>
         <h3 className="text-3xl md:text-[36px] lg:text-[42px] font-geist leading-[124%] tracking-[-4%]">
@@ -36,7 +36,7 @@ const PremiumServices = () => {
         </h3>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between md:items-end gap-10 mb-14">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-10 mb-14 ">
         
         <div className="flex flex-col lg:w-1/4 font-geist ">
           {premiumData.map((item, index) => (
@@ -44,11 +44,11 @@ const PremiumServices = () => {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`
-                text-left text-xl md:text-[24px] lg:text-[32px] leading-[124%] tracking-[-4%] transition-all duration-300 
+                text-left text-2xl leading-[124%] tracking-[-4%] transition-all duration-300 
                 pl-6 py-3 border-l-2 cursor-pointer 
                 ${index === activeIndex 
                   ? 'text-[#E2A918] border-[#E2A918]' 
-                  : 'text-[#CCCCCC] border-gray-700 hover:text-[#E2A918]'
+                  : 'text-[#CCCCCC] border-white/50 hover:text-[#E2A918]'
                 }
               `}
             >
@@ -59,8 +59,8 @@ const PremiumServices = () => {
           ))}
         </div>
 
-        <div className="lg:w-1/2">
-          <p key={activeIndex} className="text-white opacity-60 text-lg md:text-[20px] lg:text-[25px] leading-[100%] tracking-[-3%] animate-in fade-in duration-300 font-geist">
+        <div className="lg:w-[45%]">
+          <p key={activeIndex} className="text-white opacity-80 text-lg md:text-[20px] lg:text-[25px] leading-[105%] tracking-[-3%] animate-in fade-in duration-300 font-geist">
             <span className="text-white font-bold mr-2">
               {activeService.descriptionPrefix}
             </span>
@@ -82,7 +82,7 @@ const PremiumServices = () => {
       </div>
 
       {/* --- BOTTOM SECTION: LARGE IMAGE --- */}
-      <div className="w-full relative h-[300px] md:h-[500px] overflow-hidden rounded-sm">
+      <div className="w-full relative h-[50vh] overflow-hidden rounded-sm">
         <Image 
           src={activeService.imgUrl} 
           alt="Premium Livestock Delivery" 
