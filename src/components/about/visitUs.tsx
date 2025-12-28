@@ -9,7 +9,7 @@ const VisitUs = () => {
     >
       <div className="absolute inset-0 bg-black/50 z-0" />
 
-      <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 py-10 flex flex-col  justify-between gap-10">
+      <div className="relative z-10 w-[85%] md:w-[90%] mx-auto py-10 flex flex-col  justify-between gap-10">
         
             <h2 className="text-[42px] md:text[100px] lg:text-[130px] font-semibold font-geist text-white leading-[120%] tracking-[-7%]">
                 Visit us at GRF Today

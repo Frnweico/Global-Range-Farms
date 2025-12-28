@@ -5,7 +5,7 @@ const ContactUs = () => {
     <section className='bg-white w-full' id='contact-us'>
       
       <div className='hidden md:grid grid-cols-1 md:grid-cols-2 pt-8 pb-16  w-[90%] mx-auto  min-h-[50vh]'>
-        <div className='w-1/2 flex flex-col justify-between'>
+        <div className='w-1/2 flex flex-col justify-between '>
           <div className='items-start'>
             <p className='text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-[-4%] uppercase font-barlow leading-[140%]'>// Contact Us</p>
             <h3 className="text-5xl md:text-6xl lg:text-[76px] leading-[106%] tracking-[-3%] text-[#0C1515] font-geist font-medium">Let's talk</h3>
@@ -16,7 +16,7 @@ const ContactUs = () => {
             <Link href={""} className='no-underline hover:underline transition-all duration-300'>/YOUTUBE</Link>
           </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div className='w-full flex flex-col justify-between'>
             <div className="items-start">
               <p className='text-[#0E0E0E] text-sm   tracking-[-1%] leading-[150%] uppercase font-geist'>CONTACT US</p>
@@ -46,7 +46,7 @@ const ContactUs = () => {
               <p className='text-[#0E0E0E] text-sm   tracking-[-1%] leading-[150%] uppercase font-geist'>EMAIL US</p>
               <Link
                 href="mailto:info@globalrangefarms.com.ng"
-                className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all'
+                className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all break-all'
               >
                 info@globalrangefarms.com.ng
               </Link>

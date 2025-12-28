@@ -21,7 +21,7 @@ const Vision = () => {
         className="absolute top-0 right-0 z-20" 
       />
 
-      <div className="flex flex-col py-20 px-8 lg:px-16">
+      <div className="flex flex-col py-20 w-[85%] md:w-[90%] mx-auto">
         <div className="flex flex-col gap-2 text-center w-full mb-8">
             <p className=" font-medium text-[20px] tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow text-[#0E0E0E]">
           // About Us
