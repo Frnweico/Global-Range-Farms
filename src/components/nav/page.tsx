@@ -93,7 +93,7 @@ const Nav = () => {
     >
       
       {/* --- MAIN HEADER BAR --- */}
-      <div className={`flex items-center justify-between p-4 md:px-6 lg:px-12 transition-colors duration-300 ${dynamicTextColor}`}>
+      <div className={`flex items-center justify-between py-4 px-8 md:px-6 md:py-4 lg:px-12 lg:py-4 transition-colors duration-300 ${dynamicTextColor}`}>
         
         {/* LOGO */}
         <div className="relative z-50">
@@ -103,7 +103,7 @@ const Nav = () => {
                 alt="Logo" 
                 width={53} 
                 height={53} 
-                className="object-contain"
+                className="object-contain w-20 h-20 md:w-13.25 md:h-13.25"
             />
            </Link>
         </div>
@@ -132,11 +132,11 @@ const Nav = () => {
         {/* MOBILE HAMBURGER */}
         <button 
             onClick={toggleMenu} 
-            className="lg:hidden z-50 flex flex-col justify-center gap-[6px] w-8 h-8 focus:outline-none cursor-pointer"
+            className="lg:hidden z-50 flex flex-col justify-center gap-1.5 w-8 h-8 focus:outline-none cursor-pointer"
         >
-            <span className={`block w-full h-[2px] bg-current transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-[8px]" : ""}`} />
-            <span className={`block w-full h-[2px] bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
-            <span className={`block w-full h-[2px] bg-current transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-[8px]" : ""}`} />
+            <span className={`block w-full h-0.5 bg-current transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-full h-0.5 bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
+            <span className={`block w-full h-0.5 bg-current transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
 
       </div>
@@ -149,10 +149,10 @@ const Nav = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute top-full left-0 w-full bg-white px-6 pb-10 shadow-xl lg:hidden overflow-y-auto h-[60vh]"
+                className="absolute top-full left-0 w-full bg-white px-6 pb-10 lg:hidden overflow-y-auto h-[42vh]"
             >
 
-                <div className="flex flex-col flex-grow mt-10">
+                <div className="flex flex-col grow mt-6">
                     {[
                         { name: "HOME", href: "/" },
                         { name: "OUR PRODUCT", href: "/products" },
@@ -160,7 +160,7 @@ const Nav = () => {
                         { name: "ABOUT US", href: "/about-us" },
                         { name: "CONTACT US", href: "#contact-us", isContact: true },
                     ].map((link, index) => (
-                        <div key={index} className="w-full">
+                        <div key={index} className="w-[90%] mx-auto">
                             <Link 
                                 href={link.href}
                                 onClick={(e) => {

@@ -31,7 +31,7 @@ const testimonials: TestimonialProps[] = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-white py-20  mx-auto w-[93%]" id="testimonials">
+    <section className="bg-white py-20  mx-auto w-[85%] md:w-[93%]" id="testimonials">
       <div className="flex flex-col gap-5 items-start w-full">
 
         <div className="flex flex-col items-start gap-4 w-full font-barlow">
@@ -39,7 +39,7 @@ const Testimonials = () => {
             // Reviews
           </p>
           <div className="flex items-center justify-between w-full md:w-[80%]">
-            <h3 className="text-3xl md:text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0C1515]">
+            <h3 className="text-[40px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0C1515]">
               What People Say About Us
             </h3>
 
@@ -60,7 +60,7 @@ const Testimonials = () => {
                 className="
                     bg-[#252525] p-8 flex flex-col justify-between gap-8 
                     hover:shadow-md transition-shadow duration-300
-                    min-w-[75vw] snap-center h-125
+                    min-w-[75vw] snap-center h-108 md:h-125
                     md:min-w-0
                 "
             >

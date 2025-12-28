@@ -35,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const content = (
     <>
-      <span className="font-medium">{text}</span>
+      <span className="font-medium whitespace-nowrap">{text}</span>
       {showIcon && (
         <div className="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:translate-x-1">
           <svg

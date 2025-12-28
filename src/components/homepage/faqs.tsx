@@ -43,13 +43,13 @@ const FAQS = () => {
   };
 
   return (
-    <section className="bg-white pb-20  w-[93%] mx-auto" id='faqs'>
+    <section className="bg-white pb-15 md:pb-20 w-[90%] md:w-[93%] mx-auto" id='faqs'>
       
       <div className="text-center mb-8 font-barlow">
-        <p className="text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-wide uppercase mb-3 ">
+        <p className="text-[#0E0E0E] font-medium text-xl   tracking-wide uppercase mb-3 ">
             // FAQS
         </p>
-        <h3 className="text-[36px] lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0E0E0E] ">
+        <h3 className="text-4xl lg:text-[42px] leading-[124%] tracking-[-4%] text-[#0E0E0E] ">
             Questions About Our <br className="hidden md:block" /> Farm & Products
         </h3>
       </div>

@@ -4,7 +4,7 @@ const ContactUs = () => {
   return (
     <section className='bg-white w-full' id='contact-us'>
       
-      <div className='hidden md:grid grid-cols-1 md:grid-cols-2 pt-8 pb-16 w-[90%] mx-auto  min-h-[50vh]'>
+      <div className='hidden md:grid grid-cols-1 md:grid-cols-2 pt-8 pb-16  w-[90%] mx-auto  min-h-[50vh]'>
         <div className='w-1/2 flex flex-col justify-between'>
           <div className='items-start'>
             <p className='text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-[-4%] uppercase font-barlow leading-[140%]'>// Contact Us</p>
@@ -60,7 +60,7 @@ const ContactUs = () => {
       </div>
 
 {/* mobile  */}
-      <div className='flex flex-col md:hidden px-6 py-12 gap-10'>
+      <div className='flex flex-col md:hidden py-12 gap-10 w-[85%] mx-auto'>
         
         <div>
           <p className='text-[#0E0E0E] font-medium text-xl tracking-[-4%] uppercase font-barlow leading-[140%]opacity-80'>

@@ -38,7 +38,7 @@ const products: Product[] = [
 
 const OurProducts: React.FC = () => {
   return (
-    <section className='bg-white py-16 flex flex-col gap-12 w-[93%] mx-auto'>
+    <section className='bg-white py-16 flex flex-col gap-12 w-[85%] md:w-[93%] mx-auto'>
       
       <div className='flex flex-col gap-4 text-center md:text-left w-full'>
         <div className='text-center'>
@@ -47,7 +47,7 @@ const OurProducts: React.FC = () => {
         </div>
 
         <div className='flex flex-col md:flex-row justify-between items-start md:items-end gap-6'>
-          <p className="text-[#0E0E0E] leading-[142%] tracking-[-2%] text-base font-barlow md:w-[33%]">
+          <p className="text-[#0E0E0E] leading-[142%] tracking-[-2%] text-base font-barlow w-full md:w-[33%]">
             We offer well-bred, high-quality livestock for all your needs, from family occasions to festive celebrations.
           </p>
           <div className="flex flex-wrap gap-4 w-full md:w-auto justify-between">
@@ -63,8 +63,8 @@ const OurProducts: React.FC = () => {
             key={index} 
             style={{ backgroundImage: `url(${product.imageUrl})`, backgroundPosition: 'top', backgroundSize: 'cover' }} 
             className={`
-              w-full 
-              h-142 
+              w-full h-112.5
+              md:h-142 
               bg-cover bg-center bg-no-repeat 
               rounded-xs overflow-hidden flex items-end 
             `}

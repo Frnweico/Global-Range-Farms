@@ -14,14 +14,14 @@ const FooterMain = () => {
 
   return (
     <footer className="bg-[#0E0E0E] text-white pt-10 md:pt-20 pb-10 w-full overflow-hidden">
-      <div className='w-[90%] mx-auto'>
+      <div className='w-[85%] md:w-[90%] mx-auto'>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
         
         <div className="lg:col-span-5 flex flex-col items-start gap-3 md:gap-6">
           <h3 className="text-[32px] font-semibold text-white font-geist">
             Global Range Farms
           </h3>
-          <p className="text-white opacity-90 text-xl md:text-[24px] lg:text-[28px] leading-[142%] tracking-[-2%] font-geist w-[70%]">
+          <p className="text-white opacity-90 text-xl md:text-[24px] lg:text-[28px] leading-[142%] tracking-[-2%] font-geist w-full md:w-[70%]">
             Ready to Experience Better Livestock and Reliable Supply with Global Range Farms?
           </p>
           
@@ -36,29 +36,29 @@ const FooterMain = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-7 grid grid-cols-3 border justify-between">
+        <div className="lg:col-span-7 grid grid-cols-3 justify-between">
           
-          <div className="flex flex-col gap-6 w-1/2">
-            <h4 className="text-white font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%] ">Farm</h4>
-            <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
+          <div className="flex flex-col gap-6 md:w-1/2">
+            <h4 className="text-white font-geist text-xl leading-[140%] tracking-[-2%] ">Farm</h4>
+            <div className="flex flex-col gap-4 text-white opacity-60 text-sm md:text-base leading-[150%] tracking-[-2%] font-geist">
               <Link href="/products" className="hover:text-[#4ACD20] transition-colors">Our Livestock</Link>
               <Link href="/#services" className="hover:text-[#4ACD20] transition-colors">Services</Link>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 w-1/2">
-            <h4 className="text-white font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Resources</h4>
-            <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
+          <div className="flex flex-col gap-6 md:w-1/2">
+            <h4 className="text-white font-geist text-xl leading-[140%] tracking-[-2%]">Resources</h4>
+            <div className="flex flex-col gap-4 text-white opacity-60 text-sm md:text-base leading-[150%] tracking-[-2%] font-geist">
               <Link href="/#faqs" className="hover:text-[#4ACD20] transition-colors">FAQs</Link>
               <Link href="/#testimonials" className="hover:text-[#4ACD20] transition-colors">Testimonials</Link>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 w-1/2 border">
-            <h4 className="text-white font-geist text-base md:text-[18px] lg:text-[20px] tracking-[-2%]">Company</h4>
-            <div className="flex flex-col gap-4 text-white opacity-60 text-base leading-[150%] tracking-[-2%] font-geist">
+          <div className="flex flex-col gap-6 md:w-1/2 ">
+            <h4 className="text-white font-geist text-xl leading-[140%] tracking-[-2%]">Company</h4>
+            <div className="flex flex-col gap-4 text-white opacity-60 text-sm md:text-base leading-[150%] tracking-[-2%] font-geist ">
               <Link href="/about-us" className="hover:text-[#4ACD20] transition-colors">About Us</Link>
-              <Link href="/#services" className="hover:text-[#4ACD20] transition-colors">Why Choose Us</Link>
+              <Link href="/#services" className="hover:text-[#4ACD20] transition-colors ">Why Choose Us</Link>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ const FooterMain = () => {
 
       <div className="w-full h-px bg-white opacity-10 mb-4 hidden md:block" />
 
-      <div className="text-xl text-white opacity-50 mb-12 font-geist leading-[150%] tracking-[-2%]">
+      <div className="text-base md:text-xl text-white opacity-50 mb-12 font-geist leading-[150%] tracking-[-2%]">
         <p>© 2025 Global Range Farms. All rights reserved.</p>
       </div>
 

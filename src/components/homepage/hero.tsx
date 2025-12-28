@@ -18,10 +18,9 @@ const Hero = () => {
     
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-black/30 via-black/30 to-black" />
 
-      <div className="container mx-auto pb-12 sm:pb-20 w-[95%] z-10">
+      <div className="container mx-auto pb-12 sm:pb-20 w-[85%] md:w-[95%] z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] items-end ">
-          
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[120%] tracking-[-4%] text-white drop-shadow-lg font-geist">
+            <h1 className="text-[34px] md:text-6xl lg:text-7xl font-bold leading-[120%] tracking-[-4%] text-white drop-shadow-lg font-geist">
               Buy top-grade Goats, Rams, Cows and Poultry products
             </h1>
 
@@ -30,7 +29,7 @@ const Hero = () => {
               Buy premium livestock for your home, family gatherings, events, restaurants, and every special celebration.
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-start w-full">
+            <div className="flex gap-4 justify-start w-full">
               <Button 
                 text="View our Livestock" 
                 bgColor="bg-[#3ed634]" 

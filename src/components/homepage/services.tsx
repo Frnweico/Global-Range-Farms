@@ -71,7 +71,7 @@ const OurServices = () => {
   };
 
   return (
-    <section className="bg-white text-[#0E0E0E] py-16 lg:pl-15 overflow-hidden w-full mx-auto" id='services'>
+    <section className="bg-white text-[#0E0E0E] py-16 lg:pl-15 overflow-hidden w-[85%] md:w-full mx-auto" id='services'>
       
      {/* desktop  */}
       <div className="hidden lg:flex flex-col gap-16 ">
@@ -170,15 +170,13 @@ const OurServices = () => {
 
       </div>
 
-      {/* -----------------------------
-          MOBILE LAYOUT (Unchanged)
-         ----------------------------- */}
+     {/* mobile  */}
       <div className="flex flex-col lg:hidden w-full">
         <div className="mb-10">
-            <p className="font-medium text-sm tracking-wide uppercase mb-2 text-gray-500 font-barlow">
+            <p className=" text-xl tracking-[-4%] leading-[140%] uppercase mb-2 text-[#0E0E0E] font-barlow">
               // Why Choose Us?
             </p>
-            <h2 className="text-3xl leading-[120%] font-geist font-medium text-black">
+            <h2 className="text-4xl leading-[124%] tracking-[-4%] font-geist font-medium text-black">
               What Makes Us Different.
             </h2>
         </div>
@@ -187,12 +185,12 @@ const OurServices = () => {
             {services.map((service, index) => {
                 const isOpen = activeIndex === index;
                 return (
-                    <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
+                    <div key={index} className=" pb-6 ">
                         <div 
                             className="flex justify-between items-start gap-4 cursor-pointer"
                             onClick={() => toggleMobile(index)}
                         >
-                            <h3 className={`text-lg font-medium leading-[130%] transition-colors ${isOpen ? 'text-green-700' : 'text-black'}`}>
+                            <h3 className={`text-base font-normal leading-[130%] transition-colors ${isOpen ? 'text-[#164D04] font-semibold' : 'text-[#0E0E0E] '}`}>
                                 {service.mainTitle}
                             </h3>
                             <div className="mt-1 shrink-0 text-black">
@@ -200,7 +198,7 @@ const OurServices = () => {
                                     xmlns="http://www.w3.org/2000/svg" 
                                     fill="none" viewBox="0 0 24 24" 
                                     strokeWidth={2} stroke="currentColor" 
-                                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                                    className={`w-5 h-5 transition-transform duration-300 -rotate-180 ${isOpen ? 'rotate-0' : ''}`}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
@@ -217,15 +215,15 @@ const OurServices = () => {
                                     className="overflow-hidden"
                                 >
                                     <div className="pt-4 flex flex-col gap-4">
-                                        <p className="text-gray-600 text-sm leading-[150%] font-geist">
+                                        <p className="text-[#0E0E0E] text-base leading-[140%] tracking-[-2%] font-geist">
                                             {service.description}
                                         </p>
-                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-gray-100">
+                                        <div className="relative w-full h-50 rounded-[1px] overflow-hidden ">
                                             <Image 
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 
                                                 fill
-                                                className="object-cover"
+                                                className="object-contain"
                                             />
                                         </div>
                                     </div>
