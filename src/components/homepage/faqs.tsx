@@ -43,7 +43,7 @@ const FAQS = () => {
   };
 
   return (
-    <section className="bg-white pb-20 px-6 md:px-12 lg:px-20 w-full" id='faqs'>
+    <section className="bg-white pb-20  w-[93%] mx-auto" id='faqs'>
       
       <div className="text-center mb-8 font-barlow">
         <p className="text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-wide uppercase mb-3 ">
@@ -54,7 +54,7 @@ const FAQS = () => {
         </h3>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col gap-6">
+      <div className="flex flex-col gap-6">
         {FAQ_DATA.map((item, index) => {
           const isOpen = openIndex === index;
 
@@ -64,7 +64,7 @@ const FAQS = () => {
                 className="bg-white rounded-lg  border border-gray-100 overflow-hidden cursor-pointer shadow-[0px_12px_24px_-4px_#E5E5E5] hover:shadow-[0px_16px_32px_-4px_#E5E5E5] transition-shadow duration-300"
                 onClick={() => toggleFAQ(index)}
             >
-                <div className="flex justify-between items-center p-6 md:p-8">
+                <div className="flex justify-between items-center p-6 md:p-8 w-[95%]">
                     <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-medium text-[#0E0E0E] leading-[100%] tracking-[-1%] font-geist">
                         {item.question}
                     </h4>

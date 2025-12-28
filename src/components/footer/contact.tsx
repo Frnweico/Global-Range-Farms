@@ -4,7 +4,7 @@ const ContactUs = () => {
   return (
     <section className='bg-white w-full' id='contact-us'>
       
-      <div className='hidden md:grid grid-cols-1 md:grid-cols-2 pt-8 pb-16 px-16 min-h-[50vh]'>
+      <div className='hidden md:grid grid-cols-1 md:grid-cols-2 pt-8 pb-16 w-[90%] mx-auto  min-h-[50vh]'>
         <div className='w-1/2 flex flex-col justify-between'>
           <div className='items-start'>
             <p className='text-[#0E0E0E] font-medium text-sm md:text-[18px] lg:text-[20px]  tracking-[-4%] uppercase font-barlow leading-[140%]'>// Contact Us</p>

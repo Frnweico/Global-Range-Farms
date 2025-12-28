@@ -63,7 +63,7 @@ const Nav = () => {
     dynamicTextColor = "text-black";
   }
 
-  const navBgColor = isOpen ? "bg-white" : "bg-transparent backdrop-blur-sm"; 
+  const navBgColor = isOpen ? "bg-white" : isTop? "bg-transparent" : "bg-transparent backdrop-blur-sm"; 
   const logoSrc = "/images/svgs/grfLogo.svg"; 
 
   const handleContactClick = (e?: React.MouseEvent) => {

@@ -71,12 +71,12 @@ const OurServices = () => {
   };
 
   return (
-    <section className="bg-white text-[#0E0E0E] py-16 lg:pl-20 overflow-hidden w-full mx-auto" id='services'>
+    <section className="bg-white text-[#0E0E0E] py-16 lg:pl-15 overflow-hidden w-full mx-auto" id='services'>
       
      {/* desktop  */}
       <div className="hidden lg:flex flex-col gap-16 ">
         
-        <div className="flex flex-row justify-between items-start gap-12 m">
+        <div className="flex flex-row justify-between items-start gap-20">
           
           <div className="w-[40%]">
             <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-[#0E0E0E] font-barlow">

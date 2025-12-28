@@ -10,7 +10,7 @@ const Hero = () => {
           src="/images/pngs/heroImg.png" 
           alt="Livestock Background"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
       </div>
@@ -18,7 +18,7 @@ const Hero = () => {
     
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-black/30 via-black/30 to-black" />
 
-      <div className="container mx-auto px-6 pb-12 sm:pb-20 w-full z-10">
+      <div className="container mx-auto pb-12 sm:pb-20 w-[95%] z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] items-end ">
           
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[120%] tracking-[-4%] text-white drop-shadow-lg font-geist">

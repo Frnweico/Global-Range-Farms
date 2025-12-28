@@ -25,10 +25,11 @@ const PremiumServices = () => {
   const activeService = premiumData[activeIndex];
 
   return (
-    <section className="bg-[#164D04] px-6 py-16 md:px-12 lg:px-20 w-full text-white relative">
+    <section className="bg-[#164D04] py-16 text-white relative">
       
-      <div className="mb-20">
-        <p className=" text-xl tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow opacity-50">
+      <div className='mx-auto w-[90%]'>  
+      <div className="mb-20 ">
+        <p className=" text-xl tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow">
           // Premium
         </p>
         <h3 className="text-3xl md:text-[36px] lg:text-[42px] font-geist leading-[124%] tracking-[-4%]">
@@ -44,24 +45,24 @@ const PremiumServices = () => {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`
-                text-left text-2xl leading-[124%] tracking-[-4%] transition-all duration-300 
-                pl-6 py-3 border-l-2 cursor-pointer 
+                text-left text-[32px] leading-[124%] tracking-[-4%] transition-all duration-300 
+                pl-6 pt-2 border-l-2 h-fit cursor-pointer 
                 ${index === activeIndex 
                   ? 'text-[#E2A918] border-[#E2A918]' 
                   : 'text-[#CCCCCC] border-white/50 hover:text-[#E2A918]'
                 }
               `}
             >
-              <span className={index === activeIndex ? "border-b border-[#E2A918] pb-0.5" : ""}>
+              <span className={index === activeIndex ? "border-b border-[#E2A918] " : ""}>
                  {item.title}
               </span>
             </button>
           ))}
         </div>
 
-        <div className="lg:w-[45%]">
-          <p key={activeIndex} className="text-white opacity-80 text-lg md:text-[20px] lg:text-[25px] leading-[105%] tracking-[-3%] animate-in fade-in duration-300 font-geist">
-            <span className="text-white font-bold mr-2">
+        <div className="lg:w-[46.5%]">
+          <p key={activeIndex} className="text-[#ccc] text-lg md:text-[20px] lg:text-[25px] leading-[105%] tracking-[-3%] animate-in fade-in duration-300 font-geist opacity-90">
+            <span className="text-white font-bold mr-2 opacity-80">
               {activeService.descriptionPrefix}
             </span>
             {activeService.description}
@@ -89,6 +90,7 @@ const PremiumServices = () => {
           fill
           className="object-cover opacity-90"
         />
+        </div>
       </div>
         <ColoredLine bgColor="#E2A918" width="60%" className="absolute bottom-0 left-0 z-20" />
 

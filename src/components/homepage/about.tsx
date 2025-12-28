@@ -4,7 +4,7 @@ import Stats from './stats';
 
 const About = () => {
   return (
-    <section className="bg-white px-6 py-16 md:px-12 lg:px-20 w-full">
+    <section className="bg-white py-16 w-[90%] mx-auto">
       
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
         
@@ -13,7 +13,7 @@ const About = () => {
             // About Us
           </p>
           
-             <SecondaryButton text="Read About Us" href='/about-us' />
+             {/* <SecondaryButton text="Read About Us" href='/about-us' /> */}
         </div>
 
         <div className="flex flex-col w-full lg:w-[80%] justify-between">

@@ -38,7 +38,7 @@ const products: Product[] = [
 
 const OurProducts: React.FC = () => {
   return (
-    <section className='bg-white px-6 py-16 flex flex-col gap-12 w-full'>
+    <section className='bg-white py-16 flex flex-col gap-12 w-[93%] mx-auto'>
       
       <div className='flex flex-col gap-4 text-center md:text-left w-full'>
         <div className='text-center'>
@@ -58,22 +58,22 @@ const OurProducts: React.FC = () => {
       </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full'>
-        {products.map((product, index) => (
+        {products.map((product, index) => (        
           <Link href={product.link} 
             key={index} 
             style={{ backgroundImage: `url(${product.imageUrl})`, backgroundPosition: 'top', backgroundSize: 'cover' }} 
             className={`
               w-full 
-              aspect-4/5 
+              h-142 
               bg-cover bg-center bg-no-repeat 
-              rounded-sm overflow-hidden 
+              rounded-xs overflow-hidden flex items-end 
             `}
           >
-            <div className="h-full w-full flex flex-col justify-end p-6 ">
-              <h3 className="text-white text-2xl font-bold uppercase mb-1 font-barlow">
+            <div className="h-fit w-full flex flex-col justify-end px-6 pb-6">
+              <h3 className="text-white text-2xl md:text-[38px] font-bold uppercase mb-1 font-barlow leading-[124%] tracking-[-4%]">
                 {product.name}
               </h3>
-              <p className="text-gray-200 text-sm leading-snug font-medium font-outfit">
+              <p className={`text-white text-2xl leading-[100%] tracking-[-3%] font-medium font-outfit ${index < 2 ? "w-[85%]" : "w-full"}`}>
                 {product.description}
               </p>
             </div>
