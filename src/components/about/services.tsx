@@ -71,13 +71,13 @@ const ServicesAbout = () => {
   };
 
   return (
-    <section className="bg-[#164D04] px-6 py-16 md:px-12 lg:pl-20 lg:px-0 w-full overflow-hidden" id='services'>
+    <section className="bg-[#164D04] py-16 md:pl-10 lg:pl-20 w-full overflow-hidden " id='services'>
       
       {/* DESKTOP LAYOUT */}
-      <div className="hidden lg:flex flex-col gap-16">
+      <div className="hidden md:flex flex-col gap-16">
         
         {/* TOP SECTION */}
-        <div className="flex flex-row justify-between items-start gap-12">
+        <div className="flex flex-row justify-between items-start md:gap-6 lg:gap-12">
           
           <div className="w-[40%]">
             <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-white/70 font-barlow">
@@ -171,12 +171,12 @@ const ServicesAbout = () => {
       </div>
 
       {/* MOBILE LAYOUT */}
-      <div className="flex flex-col lg:hidden w-full">
+      <div className="flex flex-col md:hidden w-[85%] mx-auto">
         <div className="mb-10">
             <p className="font-medium text-sm tracking-wide uppercase mb-2 text-white/70 font-barlow">
               // Why Choose Us?
             </p>
-            <h2 className="text-3xl leading-[120%] font-geist font-medium">
+            <h2 className="text-3xl leading-[120%] font-geist font-medium text-white">
               What Makes Us Different.
             </h2>
         </div>
@@ -185,7 +185,7 @@ const ServicesAbout = () => {
             {services.map((service, index) => {
                 const isOpen = activeIndex === index;
                 return (
-                    <div key={index} className="border-b border-white/10 pb-6 last:border-0">
+                    <div key={index} className=" pb-6">
                         <div 
                             className="flex justify-between items-start gap-4 cursor-pointer"
                             onClick={() => toggleMobile(index)}
@@ -193,7 +193,7 @@ const ServicesAbout = () => {
                             <h3 className={`text-lg font-medium leading-[130%] transition-colors ${isOpen ? 'text-white' : 'text-white/70'}`}>
                                 {service.mainTitle}
                             </h3>
-                            <div className="mt-1 shrink-0">
+                            <div className="mt-1 shrink-0 text-white">
                                 <svg 
                                     xmlns="http://www.w3.org/2000/svg" 
                                     fill="none" viewBox="0 0 24 24" 

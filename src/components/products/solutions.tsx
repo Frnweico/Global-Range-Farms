@@ -10,7 +10,7 @@ const options = [
   {
     id: 1,
     title: "Wholesale & Retail Sales",
-    description: "We offer competitive prices for bulk and single purchases, ensuring you get the best value whether you are a business or an individual.",
+    description: "Buy in bulk or single purchases. Whether you’re stocking for events, retail, or home use, we make ordering easy and dependable.",
     link: "/contact"
   },
   {
@@ -22,7 +22,7 @@ const options = [
   {
     id: 3,
     title: "Delivery Service",
-    description: "Fast, reliable, and careful transportation of your livestock directly to your location within our coverage areas.",
+    description: "FREE delivery on bulk purchases within Lagos, Oyo and Ogun states. Terms and Conditions apply.",
     link: "/contact"
   },
 ];
@@ -35,7 +35,7 @@ const OurSolutions = () => {
   };
 
   return (
-    <section className="bg-white px-6 py-20 md:px-12 lg:px-20 w-full text-[#0E0E0E]">
+    <section className="bg-white py-20 w-[85%] md:w-[90%] mx-auto text-[#0E0E0E]">
       
       {/* HEADER */}
       <div className="mb-12">

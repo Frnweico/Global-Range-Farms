@@ -30,7 +30,7 @@ const Vision = () => {
           Our Vision & Mission
         </h3>
         </div>
-       <div className="w-full relative h-[250px] md:h-[400px] lg:h-[500px] mb-12 rounded-lg overflow-hidden">
+       <div className="w-full relative h-62.5 md:h-100 lg:h-125 mb-12 rounded-lg overflow-hidden">
             <Image 
                 src="/images/pngs/aboutPageImg.png" 
                 alt="cows on a field" 

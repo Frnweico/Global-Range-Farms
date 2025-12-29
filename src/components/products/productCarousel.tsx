@@ -64,7 +64,7 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         
         {/* Set 1 */}
         {images.map((src, idx) => (
-          <div key={`set1-${idx}`} className="relative h-[60vh] aspect-3/4 w-[40vw] shrink-0  overflow-hidden">
+          <div key={`set1-${idx}`} className="relative h-[60vh] aspect-3/4 md:w-[40vw] shrink-0  overflow-hidden">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
@@ -76,7 +76,7 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
         ))}
 
         {images.map((src, idx) => (
-          <div key={`set2-${idx}`} className="relative h-[60vh] aspect-3/4 w-[40vw] shrink-0  overflow-hidden ">
+          <div key={`set2-${idx}`} className="relative h-[60vh] aspect-3/4 md:w-[40vw] shrink-0  overflow-hidden ">
              <Image 
                 src={src} 
                 alt={`${alt} ${idx}`}
@@ -93,10 +93,10 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
 
 const ProductCarousel = () => {
   return (
-    <section className="flex flex-col py-20 px-6 md:px-12 lg:px-20 w-full overflow-hidden">
+    <section className="flex flex-col py-20 w-[85%] md:w-[90%] mx-auto overflow-hidden">
       
       {/* Main Page Header */}
-      <div className="flex flex-col gap-2 text-center w-full mb-16 lg:mb-24">
+      <div className="flex flex-col gap-2 md:text-center w-full mb-8 md:mb-16 lg:mb-24">
         <p className="font-medium text-[20px] tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow text-[#0E0E0E]">
           // Our Products
         </p>
@@ -117,12 +117,12 @@ const ProductCarousel = () => {
             <div className="flex flex-col md:flex-row justify-between items-start w-full gap-4 md:gap-10  pt-8 md:pt-0">
               
               {/* Title */}
-              <h4 className="text-3xl md:text-[36px] lg:text-[42px] font-geist text-[#0C1515] tracking-[-4%] leading-[124%]">
+              <h4 className="text-[28px] md:text-[36px] lg:text-[42px] font-geist text-[#0C1515] tracking-[-4%] leading-[124%]">
                 {product.title}
               </h4>
 
               {/* Description */}
-              <p className="text-[#0E0E0E] text-xl md:text-2xl lg:text-[28px] leading-[140%] tracking-[-2%] font-geist md:w-[45%] ">
+              <p className="text-[#0E0E0E] text-lg md:text-2xl lg:text-[28px] leading-[140%] tracking-[-2%] font-geist md:w-[45%] ">
                 {product.description}
               </p>
             </div>
