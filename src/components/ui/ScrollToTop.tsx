@@ -32,8 +32,6 @@ const ScrollToTop = () => {
   return (
     <div 
       onClick={scrollToTop}
-      // Fixed positioning puts it on the screen regardless of scroll
-      // lg:hidden ensures it ONLY shows on mobile/tablet, not desktop
       className="fixed bottom-6 right-4 z-50 lg:hidden cursor-pointer group"
     >
       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl border border-gray-100 transition-transform active:scale-95">
