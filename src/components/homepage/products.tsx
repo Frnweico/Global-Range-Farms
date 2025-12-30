@@ -62,14 +62,15 @@ const OurProducts: React.FC = () => {
           <Link href={product.link} 
             key={index} 
             style={{ backgroundImage: `url(${product.imageUrl})`, backgroundPosition: 'top', backgroundSize: 'cover' }} 
-            className={`
+            className={`relative 
               w-full h-112.5
               md:h-142 
               bg-cover bg-center bg-no-repeat 
               rounded-xs overflow-hidden flex items-end 
             `}
           >
-            <div className="h-fit w-full flex flex-col justify-end px-6 pb-6">
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent z-10"></div>
+            <div className="h-fit w-full flex flex-col justify-end px-6 pb-6 relative z-20">
               <h3 className="text-white text-2xl md:text-[38px] font-bold uppercase mb-1 font-barlow leading-[124%] tracking-[-4%]">
                 {product.name}
               </h3>
