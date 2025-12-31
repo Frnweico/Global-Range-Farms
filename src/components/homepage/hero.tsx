@@ -10,9 +10,18 @@ const Hero = () => {
           src="/images/pngs/heroImg.png" 
           alt="Livestock Background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center hidden md:block"
           priority
         />
+
+        <Image
+          src="/images/pngs/heroMobile.png" 
+          alt="Livestock Background"
+          fill
+          className="object-cover object-center block md:hidden"
+          priority
+        />
+        
       </div>
 
     

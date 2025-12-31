@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 
-// 1. DATA STRUCTURE
+// 1. DATA STRUCTURE (Unchanged)
 const productData = [
   {
     id: "rams",
@@ -26,7 +26,7 @@ const productData = [
       "/images/pngs/Goats03.png",
       "/images/pngs/Goats04.png",
       "/images/pngs/Goats05.png",
-      "/images/pngs/Goats06.png",
+      "/images/pngs/Goats06.png", 
     ]
   },
   {
@@ -35,8 +35,8 @@ const productData = [
     description: "Big, Fat, Strong, well-fed, and ideal for large gatherings, restaurant supply, and special occasions. Each one is bred for size, health, and excellent meat quality.",
     images: [
       "/images/pngs/Cows01.png",
-      "/images/pngs/Cows02.png",
-      "/images/pngs/Cows03.png",
+      "/images/pngs/Cows02.jpg",
+      "/images/pngs/Cows03.jpg",
       "/images/pngs/Cows04.png",
       "/images/pngs/Cows05.png",
     ]
@@ -58,6 +58,7 @@ const productData = [
 // 2. REUSABLE MARQUEE COMPONENT
 const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
   return (
+    // FIX 1: Ensure this container allows full width
     <div className="relative w-full overflow-hidden mt-8 md:mt-12">
 
       <div className="flex w-max animate-scroll gap-4 md:gap-6">
@@ -93,20 +94,22 @@ const ImageMarquee = ({ images, alt }: { images: string[], alt: string }) => {
 
 const ProductCarousel = () => {
   return (
-    <section className="flex flex-col py-20 w-[85%] md:w-[90%] mx-auto overflow-hidden">
+    // FIX 2: Parent Section is now w-full (removed [85%] mx-auto constraint)
+    <section className="flex flex-col py-20 w-full overflow-hidden">
       
       {/* Main Page Header */}
-      <div className="flex flex-col gap-2 md:text-center w-full mb-8 md:mb-16 lg:mb-24">
+      {/* FIX 3: Applied width constraints specifically to the Header */}
+      <div className="flex flex-col gap-2 md:text-center w-[85%] md:w-[90%] mx-auto mb-8 md:mb-16 lg:mb-24">
         <p className="font-medium text-[20px] tracking-[-4%] leading-[140%] uppercase mb-2 font-barlow text-[#0E0E0E]">
           // Our Products
         </p>
-        <h3 className="text-[42px] font-barlow leading-[124%] tracking-[-4%] text-[#0E0E0E]">
+        <h3 className="text-3xl lg:text-[42px] font-barlow leading-[124%] tracking-[-4%] text-[#0E0E0E]">
           Our Top-grade Livestock Selection
         </h3>
       </div>
 
       {/* Product Sections Loop */}
-      <div className="flex flex-col gap-20 md:gap-32">
+      <div className="flex flex-col gap-20 md:gap-32 w-full">
         {productData.map((product) => (
           <div 
             key={product.id} 
@@ -114,7 +117,9 @@ const ProductCarousel = () => {
             className="flex flex-col w-full scroll-mt-28" 
           >
           
-            <div className="flex flex-col md:flex-row justify-between items-start w-full gap-4 md:gap-10  pt-8 md:pt-0">
+            {/* Title & Description Container */}
+            {/* FIX 4: Applied width constraints specifically to the Text Content */}
+            <div className="flex flex-col md:flex-row justify-between items-start w-[85%] md:w-[90%] mx-auto gap-4 md:gap-10 pt-8 md:pt-0">
               
               {/* Title */}
               <h4 className="text-[28px] md:text-[36px] lg:text-[42px] font-geist text-[#0C1515] tracking-[-4%] leading-[124%]">
@@ -128,6 +133,7 @@ const ProductCarousel = () => {
             </div>
 
             {/* Infinite Carousel */}
+            {/* FIX 5: This sits outside the mx-auto div, so it spans full width */}
             <ImageMarquee images={product.images} alt={product.title} />
 
           </div>

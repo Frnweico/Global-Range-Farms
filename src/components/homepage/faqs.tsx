@@ -11,7 +11,7 @@ interface FAQSProps {
 const FAQ_DATA: FAQSProps[] = [
     {
         question: "Do you provide slaughter services?",
-        answer: "No. We only sell live animals. However, we can provide contacts of trusted professionals who handle slaughtering on request."
+        answer: "We only sell live animals. However, we can provide contacts of trusted professionals who handle slaughtering on request."
     },
     {
         question: "How do I place an order?",

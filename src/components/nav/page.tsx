@@ -112,7 +112,7 @@ const Nav = () => {
         <div className="hidden lg:flex gap-8 uppercase underline font-semibold text-[14px] leading-[150%] tracking-[-1%] font-geist drop-shadow-md"> 
           <Link href={"/"} className="hover:opacity-80 transition-opacity">Home</Link>
           <Link href={"/products"} className="hover:opacity-80 transition-opacity">Our Product</Link>
-          <Link href={"/#services"} className="hover:opacity-80 transition-opacity">Our Services</Link>
+          <Link href={"#services"} className="hover:opacity-80 transition-opacity">Our Services</Link>
           <Link href={"/about-us"} className="hover:opacity-80 transition-opacity">About Us</Link>
         </div>
 
@@ -156,7 +156,7 @@ const Nav = () => {
                     {[
                         { name: "HOME", href: "/" },
                         { name: "OUR PRODUCT", href: "/products" },
-                        { name: "OUR SERVICES", href: "/#services" },
+                        { name: "OUR SERVICES", href: "#services" },
                         { name: "ABOUT US", href: "/about-us" },
                         { name: "CONTACT US", href: "#contact-us", isContact: true },
                     ].map((link, index) => (

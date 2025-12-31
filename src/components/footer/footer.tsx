@@ -42,7 +42,7 @@ const FooterMain = () => {
             <h4 className="text-white font-geist text-xl leading-[140%] tracking-[-2%] ">Farm</h4>
             <div className="flex flex-col gap-4 text-white opacity-60 text-sm md:text-base leading-[150%] tracking-[-2%] font-geist">
               <Link href="/products" className="hover:text-[#4ACD20] transition-colors">Our Livestock</Link>
-              <Link href="/#services" className="hover:text-[#4ACD20] transition-colors">Services</Link>
+              <Link href="#services" className="hover:text-[#4ACD20] transition-colors">Services</Link>
             </div>
           </div>
 
@@ -73,11 +73,11 @@ const FooterMain = () => {
 
       <div className="relative w-full flex">
         
-        <div className="w-[95%] md:w-[90%] ">
+        <div className="w-[95%] md:w-[90%] mx-auto ">
              <Image 
                 src="/images/svgs/GlobalRangeFarms.svg" 
                 alt="Global Range Farms" 
-                width={1200} 
+                width={1330} 
                 height={200}
                 className="w-full h-auto object-contain"
              />

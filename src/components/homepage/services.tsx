@@ -76,16 +76,18 @@ const OurServices = () => {
      {/* desktop  */}
       <div className="hidden md:flex flex-col gap-16 ">
         
-        <div className="flex flex-row justify-between items-start gap-20">
+        <div className="flex flex-row justify-between  gap-20 h-auto">
           
-          <div className="w-[40%]">
+          <div className="w-[40%] flex flex-col flex-1">
+            <div>
             <p className="text-[20px] tracking-[-4%] leading-[140%] uppercase mb-3 text-[#0E0E0E] font-barlow">
               // Why Choose Us?
             </p>
             <h2 className="text-[42px] leading-[124%] tracking-[-4%] mb-8 font-geist font-medium text-[#0E0E0E]">
               What Makes Us Different.
             </h2>
-            <div className="flex gap-4">
+            </div>
+            <div className="flex gap-4 mt-auto">
               <button 
                 onClick={() => paginate(-1)}
                 className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#0E0E0E] hover:text-white text-[#0E0E0E]  transition-colors cursor-pointer "

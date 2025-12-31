@@ -44,7 +44,7 @@ const Testimonials = () => {
             </h3>
 
 <div className="hidden md:block">
-            <SecondaryButton text="Read About Us"  />
+            <SecondaryButton text="Read About Us" href="/about-us"  />
 </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ const Testimonials = () => {
         </div>
 
 <div className="block md:hidden">
-        <SecondaryButton text="Read About Us"  />
+        <SecondaryButton text="Read About Us" href="/about-us"  />
         </div>
       </div>
     </section>
