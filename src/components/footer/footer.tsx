@@ -58,7 +58,7 @@ const FooterMain = () => {
             <h4 className="text-white font-geist text-xl leading-[140%] tracking-[-2%]">Company</h4>
             <div className="flex flex-col gap-4 text-white opacity-60 text-sm md:text-base leading-[150%] tracking-[-2%] font-geist ">
               <Link href="/about-us" className="hover:text-[#4ACD20] transition-colors">About Us</Link>
-              <Link href="/#services" className="hover:text-[#4ACD20] transition-colors ">Why Choose Us</Link>
+              <Link href="#services" className="hover:text-[#4ACD20] transition-colors ">Why Choose Us</Link>
             </div>
           </div>
 
@@ -73,13 +73,13 @@ const FooterMain = () => {
 
       <div className="relative w-full flex">
         
-        <div className="w-[95%] md:w-[90%] mx-auto ">
+        <div className="w-full md:w-[95%] mx-auto ">
              <Image 
                 src="/images/svgs/GlobalRangeFarms.svg" 
                 alt="Global Range Farms" 
                 width={1330} 
                 height={200}
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain "
              />
         </div>
 
