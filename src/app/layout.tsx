@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Barlow, Outfit } from "next/font/google";
+import { Barlow, Outfit } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/page";
 import FooterSection from "@/components/footer/page";
 import { Suspense } from "react";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import ScrollManager from "@/components/ui/ScrollManager";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -42,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} ${outfit.variable} antialiased`}
+        className={`${barlow.variable} ${outfit.variable} antialiased`}
       >
         <Suspense>
         <ScrollManager />

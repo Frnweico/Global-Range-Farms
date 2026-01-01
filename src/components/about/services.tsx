@@ -220,7 +220,7 @@ const ServicesAbout = () => {
                                         <p className="text-white/80 text-sm leading-[150%] font-geist">
                                             {service.description}
                                         </p>
-                                        <div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-white/10">
+                                        <div className="relative w-full h-50 rounded-lg overflow-hidden bg-white/10">
                                             <Image 
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 
