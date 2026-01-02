@@ -146,7 +146,7 @@ const OurServices = () => {
                         >
                             {/* Text Content Block */}
                             <div className="w-[25%] flex flex-col gap-4 justify-end h-full">
-                                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-[#0E0E0E]">
+                                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-[#0E0E0E] font-geist">
                                     {service.subTitle}
                                 </h3>
                                 <p className="text-[#0E0E0E] text-base font-geist leading-[140%] tracking-[-2%]">

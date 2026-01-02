@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
     group flex items-center justify-between 
     rounded-full 
     font-medium text-sm sm:text-base
-    transition-transform active:scale-95 cursor-pointer font-geist
+    transition-transform active:scale-95 cursor-pointer font-geist hover:brightness-90 transition duration-300 ease-in-out 
     ${showIcon ? "pl-6 pr-2 py-2 gap-4" : "px-8 py-3"}
   `;
 

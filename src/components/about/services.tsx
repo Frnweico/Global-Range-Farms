@@ -147,7 +147,7 @@ const ServicesAbout = () => {
                         >
                             {/* Text Content Block */}
                             <div className="w-[25%] flex flex-col gap-4 justify-end h-full">
-                                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-white">
+                                <h3 className="text-[28px] font-medium leading-[124%] tracking-[-4%] text-white font-geist">
                                     {service.subTitle}
                                 </h3>
                                 <p className="text-white/70 text-base font-geist leading-[140%] tracking-[-2%]">

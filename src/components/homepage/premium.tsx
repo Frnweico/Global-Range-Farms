@@ -42,14 +42,14 @@ const PremiumServices = () => {
 
       <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-10 mb-14 ">
         
-        <div className="flex flex-col lg:w-1/4 font-geist ">
+        <div className="flex flex-col lg:w-[30%] font-geist">
           {premiumData.map((item, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`
                 text-left text-2xl md:text-[32px] leading-[124%] tracking-[-4%] transition-all duration-300 
-                pl-6 border-l-2 h-fit cursor-pointer 
+                pl-6 border-l-2 pt-2 cursor-pointer 
                 ${index === activeIndex 
                   ? 'text-[#E2A918] border-[#E2A918]' 
                   : 'text-[#CCCCCC] border-white/50 hover:text-[#E2A918] pt-1'

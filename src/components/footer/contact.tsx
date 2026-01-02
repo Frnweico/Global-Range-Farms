@@ -23,14 +23,14 @@ const ContactUs = () => {
               <div className='flex flex-col gap-1'>
                 <Link
                   href="tel:+2348034066000"
-                  className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all'
+                  className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all font-geist'
                 >
                   +234 803 406 6000
                 </Link>
                 <Link
                   href="https://wa.link/gobmim"
                   target='_blank'
-                  className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all'
+                  className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all font-geist'
                 >
                   +234 803 093 3046
                 </Link>
@@ -46,14 +46,14 @@ const ContactUs = () => {
               <p className='text-[#0E0E0E] text-sm   tracking-[-1%] leading-[150%] uppercase font-geist'>EMAIL US</p>
               <Link
                 href="mailto:info@globalrangefarms.com.ng"
-                className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all break-all'
+                className='text-[#0C1515] font-medium text-lg md:text-[22px] lg:text-[26px] leading-[150%] underline hover:no-underline transition-all break-all font-geist'
               >
                 info@globalrangefarms.com.ng
               </Link>
             </div>
             <div className='items-end font-geist text-sm leading-[150%] tracking-[-1%] text-[#0C1515]'>
               <p>/ RANCH ADDRESS</p>
-              <p>Logbara, directly behind Pepsi Soccer Academy,<br /> After International Breweries, Along Shagamu-Abeokuta Road.</p>
+              <p>Logbara, directly behind Pepsi Soccer Academy, After International Breweries, Along Shagamu-Abeokuta Road.</p>
             </div>
           </div>
         </div>
@@ -77,10 +77,10 @@ const ContactUs = () => {
                 CONTACT
             </p>
             <div className='flex flex-col gap-1'>
-                <Link href="tel:+2348034066000" className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%]'>
+                <Link href="tel:+2348034066000" className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%] font-geist'>
                     +234 803 4066 000
                 </Link>
-                <Link href="https://wa.link/gobmim" target='_blank' className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%]'>
+                <Link href="https://wa.link/gobmim" target='_blank' className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%] font-geist'>
                     +234 803 093 3046
                 </Link>
             </div>
@@ -91,7 +91,7 @@ const ContactUs = () => {
             <p className='text-[#0E0E0E] text-sm uppercase font-geist tracking-[-1%] opacity-80'>
                 EMAIL US
             </p>
-            <Link href="mailto:info@globalrangefarms.com.ng" className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%] wrap-break'>
+            <Link href="mailto:info@globalrangefarms.com.ng" className='text-[#0C1515] font-medium text-xl underline leading-[150%] tracking-[-1%] wrap-break font-geist'>
                 info@globalrangefarms.com.ng
             </Link>
         </div>

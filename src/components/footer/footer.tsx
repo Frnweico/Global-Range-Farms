@@ -21,7 +21,7 @@ const FooterMain = () => {
           <h3 className="text-[32px] font-semibold text-white font-geist">
             Global Range Farms
           </h3>
-          <p className="text-white opacity-90 text-xl md:text-[24px] lg:text-[28px] leading-[142%] tracking-[-2%] font-geist w-full md:w-[70%]">
+          <p className="text-white opacity-90 text-xl md:text-[24px] lg:text-[28px] leading-[142%] tracking-[-2%] font-geist w-full md:w-[75%]">
             Ready to Experience Better Livestock and Reliable Supply with Global Range Farms?
           </p>
           
