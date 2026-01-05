@@ -6,6 +6,7 @@ import FooterSection from "@/components/footer/page";
 import { Suspense } from "react";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import ScrollManager from "@/components/ui/ScrollManager";
+import WhatsAppWidget from "@/components/ui/WhatsAppWidget";
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -45,6 +46,10 @@ export default function RootLayout({
         </main>
         <FooterSection />
         <ScrollToTop />
+         <WhatsAppWidget 
+        phoneNumber="+2348030933046" 
+        message="Hello! I'm interested in buying livestock."
+      />
       </body>
     </html>
   );

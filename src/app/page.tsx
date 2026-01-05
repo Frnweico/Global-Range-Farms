@@ -9,7 +9,7 @@ import VideoSection from "@/components/homepage/video";
 
 export default function Home() {
   return (
-   <div>
+   <div className="relative">
     <Hero />
     <About />
     <VideoSection />
