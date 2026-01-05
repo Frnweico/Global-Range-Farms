@@ -2,7 +2,7 @@ import Image from "next/image";
 import ColoredLine from "../ui/ColoredLine"; 
 
 const VideoSection = () => {
-  const videoUrl = ""; 
+  const videoUrl = "/videos/GRFWeb.mp4"; 
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
@@ -20,7 +20,7 @@ const VideoSection = () => {
           muted
           loop
           playsInline 
-          poster="/images/pngs/videoPlaceholder.png"
+          poster="/videos/GRFWeb.mp4"
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
