@@ -67,7 +67,7 @@ const Testimonials = () => {
               
               <div className="flex flex-col gap-6">
                 <Image src={item.imageUrl} alt={item.name} width={70} height={70} className="object-contain rounded-full" />
-                <p className="text-white leading-[124%] tracking-[-4%] text-xl md:text-[24px] lg:text-[28px] font-semibold font-barlow">
+                <p className="text-white leading-[124%] tracking-[-4%] text-xl md:text-2xl max-[1200px]:text-2xl! lg:text-[28px] font-semibold font-barlow">
                   {item.testimonial}
                 </p>
               </div>
