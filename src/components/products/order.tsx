@@ -3,7 +3,7 @@ import Button from "../ui/MainButton";
 const Order = () => {
   return (
     <section 
-      className="relative w-full flex items-center text-center bg-cover bg-center bg-no-repeat min-h-[50vh] md:min-h-[80vh]"
+      className="relative w-full flex items-center text-center bg-cover bg-center bg-no-repeat min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh]"
       style={{backgroundImage: `url("/images/pngs/orderImg.png")`}}
     >
       <div className="absolute inset-0 bg-black/50 z-0" />
@@ -14,7 +14,7 @@ const Order = () => {
                 Order with Confidence!
             </h2>
 
-           <p className="text-base md:text-[28px] font-geist font-bold text-white leading-[121%] tracking-[-3%] w-[65%] md:w-[40%]">
+           <p className="text-base md:text-[28px] font-geist font-bold text-white leading-[121%] tracking-[-3%] w-[65%] md:w-1/2 lg:w-[40%]">
               Care, quality, and integrity, that’s the Global Range Farms promise.
            </p>
            

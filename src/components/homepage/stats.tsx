@@ -59,7 +59,7 @@ const Stats = () => {
                         +
                     </span>
                     
-                    <span className="text-sm sm:text-xl md:text-2xl lg:text-[32px] font-regular text-[#0C151599] font-barlow leading-none ">
+                    <span className="text-sm sm:text-xl max-[865px]:text-xl! md:text-2xl lg:text-[32px] font-regular text-[#0C151599] font-barlow leading-none ">
                       {stat.suffix}
                     </span>
                 </div>

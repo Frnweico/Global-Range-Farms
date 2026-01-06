@@ -26,7 +26,7 @@ const WhatsAppWidget = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 left-6 md:left-auto md:right-6 z-9999"
+      className="fixed bottom-6 left-6 lg:left-auto md:right-6 z-9999"
       style={{
         backgroundColor: "#25D366",
         borderRadius: "50%",

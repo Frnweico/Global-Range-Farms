@@ -4,7 +4,7 @@ import ColoredLine from "../ui/ColoredLine";
 const VisitUs = () => {
   return (
     <section 
-      className="relative w-full flex bg-cover bg-center bg-no-repeat min-h-[60vh] md:min-h-[80vh]"
+      className="relative w-full flex bg-cover bg-center bg-no-repeat min-h-[50vh] md:min-h-[40vh] lg:min-h-[70vh]"
       style={{backgroundImage: `url("/images/pngs/visitImg.png")`}}
     >
       <div className="absolute inset-0 bg-black/50 z-0" />
