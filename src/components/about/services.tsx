@@ -71,13 +71,13 @@ const ServicesAbout = () => {
   };
 
   return (
-    <section className="bg-[#164D04] py-16 md:pl-10 lg:pl-20 w-full overflow-hidden " id='services'>
+    <section className="bg-[#164D04] py-16 md:pl-15 lg:pl-20 w-full overflow-hidden " id='services'>
       
       {/* DESKTOP LAYOUT */}
       <div className="hidden md:flex flex-col gap-16">
         
         {/* TOP SECTION */}
-        <div className="flex flex-row justify-between md:gap-6 lg:gap-12 h-auto">
+        <div className="flex flex-row justify-between lg:gap-12 h-auto">
           
           <div className="w-[40%] flex flex-col flex-1">
             <div>

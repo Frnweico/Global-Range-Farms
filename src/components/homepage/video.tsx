@@ -20,6 +20,7 @@ const VideoSection = () => {
           muted
           loop
           playsInline 
+          preload="auto"
           poster="/videos/GRFWeb.mp4"
         >
           <source src={videoUrl} type="video/mp4" />

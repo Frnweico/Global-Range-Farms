@@ -71,7 +71,7 @@ const OurServices = () => {
   };
 
   return (
-    <section className="bg-white text-[#0E0E0E] py-16 md:pl-10 lg:pl-15 overflow-hidden w-[85%] md:w-full mx-auto" id='services'>
+    <section className="bg-white text-[#0E0E0E] py-16 md:pl-10 lg:pl-15 overflow-hidden w-full" id='services'>
       
      {/* desktop  */}
       <div className="hidden md:flex flex-col gap-16 ">
@@ -173,7 +173,7 @@ const OurServices = () => {
       </div>
 
      {/* mobile  */}
-      <div className="flex flex-col md:hidden w-full">
+      <div className="flex flex-col md:hidden w-[85%] mx-auto">
         <div className="mb-10">
             <p className=" text-xl tracking-[-4%] leading-[140%] uppercase mb-2 text-[#0E0E0E] font-barlow">
               // Why Choose Us?

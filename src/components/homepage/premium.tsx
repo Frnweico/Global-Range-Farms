@@ -86,7 +86,7 @@ const PremiumServices = () => {
       </div>
 
       {/* --- BOTTOM SECTION: LARGE IMAGE --- */}
-      <div className="w-full relative h-[20vh] md:h-[50vh] overflow-hidden rounded-sm">
+      <div className="w-full relative h-[40vh] md:h-[40vh] overflow-hidden rounded-sm">
        <AnimatePresence mode='wait'>
             <motion.div
                 key={activeIndex}
@@ -100,7 +100,7 @@ const PremiumServices = () => {
                     src={activeService.imgUrlMobile} 
                     alt={activeService.title} 
                     fill
-                    className="object-contain opacity-90 block md:hidden "
+                    className="object-contain opacity-90 block md:hidden w-full "
                     priority={true}
                 />
 

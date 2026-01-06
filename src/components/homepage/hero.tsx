@@ -38,7 +38,7 @@ const Hero = () => {
               Buy premium livestock for your home, family gatherings, events, restaurants, and every special celebration.
             </p>
 
-            <div className="flex gap-4 justify-start w-full">
+            <div className="flex gap-2 md:gap-4 justify-start w-full">
               <Button 
                 text="View our Livestock" 
                 bgColor="bg-[#3ed634]" 

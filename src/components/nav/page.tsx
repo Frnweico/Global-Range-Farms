@@ -149,7 +149,7 @@ const Nav = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute top-full left-0 w-full bg-white px-6 pb-10 lg:hidden overflow-y-auto h-[42vh]"
+                className="absolute top-full left-0 w-full bg-white px-6 pb-10 lg:hidden overflow-y-auto h-[42vh] min-[]: md:h-[50vh] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
 
                 <div className="flex flex-col grow mt-6">
