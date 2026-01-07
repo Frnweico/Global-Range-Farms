@@ -86,7 +86,7 @@ const PremiumServices = () => {
       </div>
 
       {/* --- BOTTOM SECTION: LARGE IMAGE --- */}
-      <div className="w-full relative h-[40vh] lg:h-[55vh] overflow-hidden rounded-sm">
+      <div className="w-full relative h-[20vh] lg:h-[55vh] overflow-hidden rounded-sm">
        <AnimatePresence mode='wait'>
             <motion.div
                 key={activeIndex}
