@@ -34,7 +34,7 @@ const Testimonials = () => {
     <section className="bg-white py-20  mx-auto w-[85%] md:w-[93%]" id="testimonials">
       <div className="flex flex-col gap-5 items-start w-full">
 
-        <div className="flex flex-col items-start gap-4 w-full font-barlow">
+        <div className="flex flex-col items-start gap-4 w-full font-barlow ">
           <p className="text-[#0E0E0E] text-sm md:text-[18px] lg:text-[20px] tracking-wide uppercase opacity-80">
             // Reviews
           </p>
@@ -43,7 +43,7 @@ const Testimonials = () => {
               What People Say About Us
             </h3>
 
-<div className="hidden md:block">
+<div className="hidden md:block mb-0">
             <SecondaryButton text="Read About Us" href="/about-us"  />
 </div>
           </div>
