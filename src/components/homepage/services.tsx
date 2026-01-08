@@ -225,7 +225,7 @@ const OurServices = () => {
                                                 src={service.imageUrl} 
                                                 alt={service.mainTitle} 
                                                 fill
-                                                className="object-contain"
+                                                className="object-cover"
                                             />
                                         </div>
                                     </div>

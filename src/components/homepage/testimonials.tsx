@@ -43,7 +43,7 @@ const Testimonials = () => {
               What People Say About Us
             </h3>
 
-<div className="hidden md:block mb-0">
+<div className="hidden md:block">
             <SecondaryButton text="Read About Us" href="/about-us"  />
 </div>
           </div>
